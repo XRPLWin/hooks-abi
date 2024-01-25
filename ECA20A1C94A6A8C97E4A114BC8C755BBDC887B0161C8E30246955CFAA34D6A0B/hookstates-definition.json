@@ -1,0 +1,1326 @@
+{
+  "hook_account": "rBvKgF3jSZWdJcwSsmoJspoXLLDVLDp6jg",
+  "hook_namespace_id": "01EAF09326B4911554384121FF56FA8FECC215FDDE2EC35D9E59F2C53EC665A0",
+  "hook_definition": {
+    "name": "Evernode",
+    "description": "Evernode",
+    "hook_states": [
+      {
+        "name": "Issuer Address",
+        "hookstate_key": [
+          {
+            "type": "VarString",
+            "name": "Key",
+            "pattern": "EVR",
+            "byte_length": 3,
+            "exclude": true
+          },
+          {
+            "type": "UInt8",
+            "name": "Prefix",
+            "pattern": "1",
+            "exclude": true
+          },
+          {
+            "type": "VarString",
+            "name": "",
+            "byte_length": 27,
+            "pattern": "000000000000000000000000000",
+            "exclude": true
+          },
+          {
+            "type": "UInt8",
+            "name": "Index",
+            "pattern": "1",
+            "exclude": true
+          }
+        ],
+        "hookstate_data": [
+          {
+            "type": "AccountID",
+            "name": "Address"
+          }
+        ]
+      },
+      {
+        "name": "Foundation Address",
+        "hookstate_key": [
+          {
+            "type": "VarString",
+            "name": "Key",
+            "pattern": "EVR",
+            "byte_length": 3,
+            "exclude": true
+          },
+          {
+            "type": "UInt8",
+            "name": "Prefix",
+            "pattern": "1",
+            "exclude": true
+          },
+          {
+            "type": "VarString",
+            "name": "",
+            "byte_length": 27,
+            "pattern": "000000000000000000000000000",
+            "exclude": true
+          },
+          {
+            "type": "UInt8",
+            "name": "Index",
+            "pattern": "2",
+            "exclude": true
+          }
+        ],
+        "hookstate_data": [
+          {
+            "type": "AccountID",
+            "name": "Address"
+          }
+        ]
+      },
+      {
+        "name": "Moment Size",
+        "hookstate_key": [
+          {
+            "type": "VarString",
+            "name": "Key",
+            "pattern": "EVR",
+            "byte_length": 3,
+            "exclude": true
+          },
+          {
+            "type": "UInt8",
+            "name": "Prefix",
+            "pattern": "1",
+            "exclude": true
+          },
+          {
+            "type": "VarString",
+            "name": "",
+            "byte_length": 27,
+            "pattern": "000000000000000000000000000",
+            "exclude": true
+          },
+          {
+            "type": "UInt8",
+            "name": "Index",
+            "pattern": "3",
+            "exclude": true
+          }
+        ],
+        "hookstate_data": [
+          {
+            "type": "UInt16",
+            "name": "Size"
+          }
+        ]
+      },
+      {
+        "name": "Mint Limit",
+        "hookstate_key": [
+          {
+            "type": "VarString",
+            "name": "Key",
+            "pattern": "EVR",
+            "byte_length": 3,
+            "exclude": true
+          },
+          {
+            "type": "UInt8",
+            "name": "Prefix",
+            "pattern": "1",
+            "exclude": true
+          },
+          {
+            "type": "VarString",
+            "name": "",
+            "byte_length": 27,
+            "pattern": "000000000000000000000000000",
+            "exclude": true
+          },
+          {
+            "type": "UInt8",
+            "name": "Index",
+            "pattern": "4",
+            "exclude": true
+          }
+        ],
+        "hookstate_data": [
+          {
+            "type": "UInt64",
+            "name": "Limit"
+          }
+        ]
+      },
+      {
+        "name": "Fixed Reg Fee",
+        "hookstate_key": [
+          {
+            "type": "VarString",
+            "name": "Key",
+            "pattern": "EVR",
+            "byte_length": 3,
+            "exclude": true
+          },
+          {
+            "type": "UInt8",
+            "name": "Prefix",
+            "pattern": "1",
+            "exclude": true
+          },
+          {
+            "type": "VarString",
+            "name": "",
+            "byte_length": 27,
+            "pattern": "000000000000000000000000000",
+            "exclude": true
+          },
+          {
+            "type": "UInt8",
+            "name": "Index",
+            "pattern": "5",
+            "exclude": true
+          }
+        ],
+        "hookstate_data": [
+          {
+            "type": "UInt64",
+            "name": "Fee"
+          }
+        ]
+      },
+      {
+        "name": "Host Heartbeat Freq",
+        "hookstate_key": [
+          {
+            "type": "VarString",
+            "name": "Key",
+            "pattern": "EVR",
+            "byte_length": 3,
+            "exclude": true
+          },
+          {
+            "type": "UInt8",
+            "name": "Prefix",
+            "pattern": "1",
+            "exclude": true
+          },
+          {
+            "type": "VarString",
+            "name": "",
+            "byte_length": 27,
+            "pattern": "000000000000000000000000000",
+            "exclude": true
+          },
+          {
+            "type": "UInt8",
+            "name": "Index",
+            "pattern": "6",
+            "exclude": true
+          }
+        ],
+        "hookstate_data": [
+          {
+            "type": "UInt16",
+            "name": "Freq"
+          }
+        ]
+      },
+      {
+        "name": "Lease Acquire Window",
+        "hookstate_key": [
+          {
+            "type": "VarString",
+            "name": "Key",
+            "pattern": "EVR",
+            "byte_length": 3,
+            "exclude": true
+          },
+          {
+            "type": "UInt8",
+            "name": "Prefix",
+            "pattern": "1",
+            "exclude": true
+          },
+          {
+            "type": "VarString",
+            "name": "",
+            "byte_length": 27,
+            "pattern": "000000000000000000000000000",
+            "exclude": true
+          },
+          {
+            "type": "UInt8",
+            "name": "Index",
+            "pattern": "7",
+            "exclude": true
+          }
+        ],
+        "hookstate_data": [
+          {
+            "type": "UInt16",
+            "name": "Window"
+          }
+        ]
+      },
+      {
+        "name": "Reward Configuration",
+        "hookstate_key": [
+          {
+            "type": "VarString",
+            "name": "Key",
+            "pattern": "EVR",
+            "byte_length": 3,
+            "exclude": true
+          },
+          {
+            "type": "UInt8",
+            "name": "Prefix",
+            "pattern": "1",
+            "exclude": true
+          },
+          {
+            "type": "VarString",
+            "name": "",
+            "byte_length": 27,
+            "pattern": "000000000000000000000000000",
+            "exclude": true
+          },
+          {
+            "type": "UInt8",
+            "name": "Index",
+            "pattern": "8",
+            "exclude": true
+          }
+        ],
+        "hookstate_data": [
+          {
+            "type": "UInt8",
+            "name": "Epoch Count"
+          },
+          {
+            "type": "UInt32",
+            "name": "First Epoch Reward Quota"
+          },
+          {
+            "type": "UInt32",
+            "name": "Epoch Reward Amount"
+          },
+          {
+            "type": "UInt32",
+            "name": "Reward Start Moment"
+          },
+          {
+            "type": "UInt16",
+            "name": "Accumulated Reward Frequency"
+          },
+          {
+            "type": "UInt8",
+            "name": "Host Reputation Threshold"
+          }
+        ]
+      },
+      {
+        "name": "Max Tolerable Downtime",
+        "hookstate_key": [
+          {
+            "type": "VarString",
+            "name": "Key",
+            "pattern": "EVR",
+            "byte_length": 3,
+            "exclude": true
+          },
+          {
+            "type": "UInt8",
+            "name": "Prefix",
+            "pattern": "1",
+            "exclude": true
+          },
+          {
+            "type": "VarString",
+            "name": "",
+            "byte_length": 27,
+            "pattern": "000000000000000000000000000",
+            "exclude": true
+          },
+          {
+            "type": "UInt8",
+            "name": "Index",
+            "pattern": "9",
+            "exclude": true
+          }
+        ],
+        "hookstate_data": [
+          {
+            "type": "UInt16",
+            "name": "Max Tolerable Downtime"
+          }
+        ]
+      },
+      {
+        "name": "Moment Transit Info",
+        "hookstate_key": [
+          {
+            "type": "VarString",
+            "name": "Key",
+            "pattern": "EVR",
+            "byte_length": 3,
+            "exclude": true
+          },
+          {
+            "type": "UInt8",
+            "name": "Prefix",
+            "pattern": "1",
+            "exclude": true
+          },
+          {
+            "type": "VarString",
+            "name": "",
+            "byte_length": 27,
+            "pattern": "000000000000000000000000000",
+            "exclude": true
+          },
+          {
+            "type": "UInt8",
+            "name": "Index",
+            "pattern": "10",
+            "exclude": true
+          }
+        ],
+        "hookstate_data": [
+          {
+            "type": "UInt64",
+            "name": "Transition Index"
+          },
+          {
+            "type": "UInt16",
+            "name": "Moment Size"
+          },
+          {
+            "type": "UInt8",
+            "name": "Index Type"
+          }
+        ]
+      },
+      {
+        "name": "Max Emit Trx Fee",
+        "hookstate_key": [
+          {
+            "type": "VarString",
+            "name": "Key",
+            "pattern": "EVR",
+            "byte_length": 3,
+            "exclude": true
+          },
+          {
+            "type": "UInt8",
+            "name": "Prefix",
+            "pattern": "1",
+            "exclude": true
+          },
+          {
+            "type": "VarString",
+            "name": "",
+            "byte_length": 27,
+            "pattern": "000000000000000000000000000",
+            "exclude": true
+          },
+          {
+            "type": "UInt8",
+            "name": "Index",
+            "pattern": "11",
+            "exclude": true
+          }
+        ],
+        "hookstate_data": [
+          {
+            "type": "UInt64",
+            "name": "Max Emit Trx Fee"
+          }
+        ]
+      },
+      {
+        "name": "Heartbeat Addr",
+        "hookstate_key": [
+          {
+            "type": "VarString",
+            "name": "Key",
+            "pattern": "EVR",
+            "byte_length": 3,
+            "exclude": true
+          },
+          {
+            "type": "UInt8",
+            "name": "Prefix",
+            "pattern": "1",
+            "exclude": true
+          },
+          {
+            "type": "VarString",
+            "name": "",
+            "byte_length": 27,
+            "pattern": "000000000000000000000000000",
+            "exclude": true
+          },
+          {
+            "type": "UInt8",
+            "name": "Index",
+            "pattern": "12",
+            "exclude": true
+          }
+        ],
+        "hookstate_data": [
+          {
+            "type": "AccountID",
+            "name": "Address"
+          }
+        ]
+      },
+      {
+        "name": "Registry Addr",
+        "hookstate_key": [
+          {
+            "type": "VarString",
+            "name": "Key",
+            "pattern": "EVR",
+            "byte_length": 3,
+            "exclude": true
+          },
+          {
+            "type": "UInt8",
+            "name": "Prefix",
+            "pattern": "1",
+            "exclude": true
+          },
+          {
+            "type": "VarString",
+            "name": "",
+            "byte_length": 27,
+            "pattern": "000000000000000000000000000",
+            "exclude": true
+          },
+          {
+            "type": "UInt8",
+            "name": "Index",
+            "pattern": "13",
+            "exclude": true
+          }
+        ],
+        "hookstate_data": [
+          {
+            "type": "AccountID",
+            "name": "Address"
+          }
+        ]
+      },
+      {
+        "name": "Governance Configuration",
+        "hookstate_key": [
+          {
+            "type": "VarString",
+            "name": "Key",
+            "pattern": "EVR",
+            "byte_length": 3,
+            "exclude": true
+          },
+          {
+            "type": "UInt8",
+            "name": "Prefix",
+            "pattern": "1",
+            "exclude": true
+          },
+          {
+            "type": "VarString",
+            "name": "",
+            "byte_length": 27,
+            "pattern": "000000000000000000000000000",
+            "exclude": true
+          },
+          {
+            "type": "UInt8",
+            "name": "Index",
+            "pattern": "14",
+            "exclude": true
+          }
+        ],
+        "hookstate_data": [
+          {
+            "type": "UInt32",
+            "name": "Eligibility Period"
+          },
+          {
+            "type": "UInt32",
+            "name": "Candidate Life Period"
+          },
+          {
+            "type": "UInt32",
+            "name": "Candidate Election Period"
+          },
+          {
+            "type": "UInt16",
+            "name": "Candidate Support Average"
+          }
+        ]
+      },
+      {
+        "name": "Network Configuration",
+        "hookstate_key": [
+          {
+            "type": "VarString",
+            "name": "Key",
+            "pattern": "EVR",
+            "byte_length": 3,
+            "exclude": true
+          },
+          {
+            "type": "UInt8",
+            "name": "Prefix",
+            "pattern": "1",
+            "exclude": true
+          },
+          {
+            "type": "VarString",
+            "name": "",
+            "byte_length": 27,
+            "pattern": "000000000000000000000000000",
+            "exclude": true
+          },
+          {
+            "type": "UInt8",
+            "name": "Index",
+            "pattern": "15",
+            "exclude": true
+          }
+        ],
+        "hookstate_data": [
+          {
+            "type": "UInt32",
+            "name": "Busyness Detect Period"
+          },
+          {
+            "type": "UInt16",
+            "name": "Busyness Detect Average"
+          }
+        ]
+      },
+      {
+        "name": "Host Count",
+        "hookstate_key": [
+          {
+            "type": "VarString",
+            "name": "Key",
+            "pattern": "EVR",
+            "byte_length": 3,
+            "exclude": true
+          },
+          {
+            "type": "UInt8",
+            "name": "Index",
+            "pattern": "50",
+            "exclude": true
+          },
+          {
+            "type": "VarString",
+            "name": "padding",
+            "byte_length": 28,
+            "pattern": "0000000000000000000000000000",
+            "exclude": true
+          }
+        ],
+        "hookstate_data": [
+          {
+            "type": "UInt32",
+            "name": "host_count"
+          }
+        ]
+      },
+      {
+        "name": "Moment Base Info",
+        "hookstate_key": [
+          {
+            "type": "VarString",
+            "name": "Key",
+            "pattern": "EVR",
+            "byte_length": 3,
+            "exclude": true
+          },
+          {
+            "type": "UInt8",
+            "name": "Index",
+            "pattern": "51",
+            "exclude": true
+          },
+          {
+            "type": "VarString",
+            "name": "padding",
+            "byte_length": 28,
+            "pattern": "0000000000000000000000000000",
+            "exclude": true
+          }
+        ],
+        "hookstate_data": [
+          {
+            "type": "UInt64",
+            "name": "transition_index"
+          },
+          {
+            "type": "UInt32",
+            "name": "transition_moment"
+          },
+          {
+            "type": "UInt8",
+            "name": "index_type"
+          }
+        ]
+      },
+      {
+        "name": "Host Reg Fees",
+        "hookstate_key": [
+          {
+            "type": "VarString",
+            "name": "Key",
+            "pattern": "EVR",
+            "byte_length": 3,
+            "exclude": true
+          },
+          {
+            "type": "UInt8",
+            "name": "Index",
+            "pattern": "52",
+            "exclude": true
+          },
+          {
+            "type": "VarString",
+            "name": "padding",
+            "byte_length": 28,
+            "pattern": "0000000000000000000000000000",
+            "exclude": true
+          }
+        ],
+        "hookstate_data": [
+          {
+            "type": "UInt64",
+            "name": "Host Fee"
+          }
+        ]
+      },
+      {
+        "name": "Max Reg",
+        "hookstate_key": [
+          {
+            "type": "VarString",
+            "name": "Key",
+            "pattern": "EVR",
+            "byte_length": 3,
+            "exclude": true
+          },
+          {
+            "type": "UInt8",
+            "name": "Index",
+            "pattern": "53",
+            "exclude": true
+          },
+          {
+            "type": "VarString",
+            "name": "padding",
+            "byte_length": 28,
+            "pattern": "0000000000000000000000000000",
+            "exclude": true
+          }
+        ],
+        "hookstate_data": [
+          {
+            "type": "UInt64",
+            "name": "Max Regs"
+          }
+        ]
+      },
+      {
+        "name": "Reward Info",
+        "hookstate_key": [
+          {
+            "type": "VarString",
+            "name": "Key",
+            "pattern": "EVR",
+            "byte_length": 3,
+            "exclude": true
+          },
+          {
+            "type": "UInt8",
+            "name": "Index",
+            "pattern": "54",
+            "exclude": true
+          },
+          {
+            "type": "VarString",
+            "name": "padding",
+            "byte_length": 28,
+            "pattern": "0000000000000000000000000000",
+            "exclude": true
+          }
+        ],
+        "hookstate_data": [
+          {
+            "type": "UInt8",
+            "name": "Epoch"
+          },
+          {
+            "type": "UInt32",
+            "name": "Saved Moment"
+          },
+          {
+            "type": "UInt32",
+            "name": "Prev Moment Active Host Count"
+          },
+          {
+            "type": "UInt32",
+            "name": "Cur Moment Active Host Count"
+          },
+          {
+            "type": "XFL",
+            "name": "Epoch Pool"
+          }
+        ]
+      },
+      {
+        "name": "Governance Info",
+        "hookstate_key": [
+          {
+            "type": "VarString",
+            "name": "Key",
+            "pattern": "EVR",
+            "byte_length": 3,
+            "exclude": true
+          },
+          {
+            "type": "UInt8",
+            "name": "Index",
+            "pattern": "55",
+            "exclude": true
+          },
+          {
+            "type": "VarString",
+            "name": "padding",
+            "byte_length": 28,
+            "pattern": "0000000000000000000000000000",
+            "exclude": true
+          }
+        ],
+        "hookstate_data": [
+          {
+            "type": "UInt8",
+            "name": "Governance Mode"
+          },
+          {
+            "type": "UInt32",
+            "name": "Last Candidate Idx"
+          },
+          {
+            "type": "UInt32",
+            "name": "Voter Base Count"
+          },
+          {
+            "type": "UInt64",
+            "name": "Voter Base Count Changed Timestamp"
+          },
+          {
+            "type": "UInt32",
+            "name": "Foundation Last Voted Candidate Idx"
+          },
+          {
+            "type": "UInt64",
+            "name": "Foundation Last Voted Timestamp"
+          },
+          {
+            "type": "Hash256",
+            "name": "Elected Proposal Unique Id"
+          },
+          {
+            "type": "UInt64",
+            "name": "Proposal Elected Timestamp"
+          },
+          {
+            "type": "UInt8",
+            "name": "Updated Hook Count"
+          }
+        ]
+      },
+      {
+        "name": "Trx Fee Base Info",
+        "hookstate_key": [
+          {
+            "type": "VarString",
+            "name": "Key",
+            "pattern": "EVR",
+            "byte_length": 3,
+            "exclude": true
+          },
+          {
+            "type": "UInt8",
+            "name": "Index",
+            "pattern": "56",
+            "exclude": true
+          },
+          {
+            "type": "VarString",
+            "name": "padding",
+            "byte_length": 28,
+            "pattern": "0000000000000000000000000000",
+            "exclude": true
+          }
+        ],
+        "hookstate_data": [
+          {
+            "type": "UInt32",
+            "name": "Fee Base Avg"
+          },
+          {
+            "type": "UInt64",
+            "name": "Avg Changed Idx"
+          },
+          {
+            "type": "UInt32",
+            "name": "Avg Accumulator"
+          },
+          {
+            "type": "UInt16",
+            "name": "Counter"
+          }
+        ]
+      },
+      {
+        "name": "Token Id",
+        "hookstate_key": [
+          {
+            "type": "VarString",
+            "name": "Key",
+            "pattern": "EVR",
+            "byte_length": 3,
+            "exclude": true
+          },
+          {
+            "type": "UInt8",
+            "name": "Index",
+            "pattern": "2",
+            "exclude": true
+          },
+          {
+            "type": "VarString",
+            "name": "TokenID",
+            "byte_length": 28,
+            "binary": true
+          }
+        ],
+        "hookstate_data": [
+          {
+            "type": "AccountID",
+            "name": "Host Address"
+          },
+          {
+            "type": "VarString",
+            "name": "CPU Model Name",
+            "byte_length": 40
+          },
+          {
+            "type": "UInt16",
+            "name": "CPU Count"
+          },
+          {
+            "type": "UInt16",
+            "name": "CPU Speed"
+          },
+          {
+            "type": "UInt32",
+            "name": "CPU Microsec"
+          },
+          {
+            "type": "UInt32",
+            "name": "RAM MB"
+          },
+          {
+            "type": "UInt32",
+            "name": "Disk MB"
+          },
+          {
+            "type": "VarString",
+            "name": "Email",
+            "byte_length": 40
+          },
+          {
+            "type": "XFL",
+            "name": "Accumulated Reward Amount"
+          }
+        ]
+      },
+      {
+        "name": "Host Address",
+        "hookstate_key": [
+          {
+            "type": "VarString",
+            "name": "Key",
+            "pattern": "EVR",
+            "byte_length": 3,
+            "exclude": true
+          },
+          {
+            "type": "UInt8",
+            "name": "Index",
+            "pattern": "3",
+            "exclude": true
+          },
+          {
+            "type": "VarString",
+            "name": "padding",
+            "byte_length": 8,
+            "pattern": "00000000",
+            "exclude": true
+          },
+          {
+            "type": "AccountID",
+            "name": "Account"
+          }
+        ],
+        "hookstate_data": [
+          {
+            "type": "VarString",
+            "name": "TokenID",
+            "byte_length": 32,
+            "binary": true
+          },
+          {
+            "type": "VarString",
+            "name": "Country Code",
+            "byte_length": 2
+          },
+          {
+            "type": "VarString",
+            "name": "Reserved",
+            "byte_length": 8
+          },
+          {
+            "type": "VarString",
+            "name": "Description",
+            "byte_length": 26
+          },
+          {
+            "type": "UInt64",
+            "name": "Registration Ledger"
+          },
+          {
+            "type": "UInt64",
+            "name": "Registration Fee"
+          },
+          {
+            "type": "UInt32",
+            "name": "No of Total Instances"
+          },
+          {
+            "type": "UInt32",
+            "name": "No of Active Instances"
+          },
+          {
+            "type": "UInt64",
+            "name": "Last Heartbeat Index"
+          },
+          {
+            "type": "VarString",
+            "name": "Version",
+            "byte_length": 3
+          },
+          {
+            "type": "UInt64",
+            "name": "Registration Timestamp"
+          },
+          {
+            "type": "UInt8",
+            "name": "Transfer Flag"
+          },
+          {
+            "type": "UInt32",
+            "name": "Last Vote Candidate Idx"
+          },
+          {
+            "type": "UInt64",
+            "name": "Last Vote Timestamp"
+          },
+          {
+            "type": "UInt8",
+            "name": "Support Vote Sent"
+          },
+          {
+            "type": "UInt8",
+            "name": "Host Reputation"
+          },
+          {
+            "type": "UInt8",
+            "name": "Flags"
+          },
+          {
+            "type": "UInt64",
+            "name": "Transfer Timestamp"
+          }
+        ]
+      },
+      {
+        "name": "Host Address",
+        "hookstate_key": [
+          {
+            "type": "VarString",
+            "name": "Key",
+            "pattern": "EVR",
+            "byte_length": 3,
+            "exclude": true
+          },
+          {
+            "type": "UInt8",
+            "name": "Index",
+            "pattern": "3",
+            "exclude": true
+          },
+          {
+            "type": "VarString",
+            "name": "padding",
+            "byte_length": 8,
+            "pattern": "00000000",
+            "exclude": true
+          },
+          {
+            "type": "AccountID",
+            "name": "Account"
+          }
+        ],
+        "hookstate_data": [
+          {
+            "type": "VarString",
+            "name": "TokenID",
+            "byte_length": 32,
+            "binary": true
+          },
+          {
+            "type": "VarString",
+            "name": "Country Code",
+            "byte_length": 2
+          },
+          {
+            "type": "VarString",
+            "name": "Reserved",
+            "byte_length": 8
+          },
+          {
+            "type": "VarString",
+            "name": "Description",
+            "byte_length": 26
+          },
+          {
+            "type": "UInt64",
+            "name": "Registration Ledger"
+          },
+          {
+            "type": "UInt64",
+            "name": "Registration Fee"
+          },
+          {
+            "type": "UInt32",
+            "name": "No of Total Instances"
+          },
+          {
+            "type": "UInt32",
+            "name": "No of Active Instances"
+          },
+          {
+            "type": "UInt64",
+            "name": "Last Heartbeat Index"
+          },
+          {
+            "type": "VarString",
+            "name": "Version",
+            "byte_length": 3
+          },
+          {
+            "type": "UInt64",
+            "name": "Registration Timestamp"
+          },
+          {
+            "type": "UInt8",
+            "name": "Transfer Flag"
+          },
+          {
+            "type": "UInt32",
+            "name": "Last Vote Candidate Idx"
+          },
+          {
+            "type": "UInt64",
+            "name": "Last Vote Timestamp"
+          },
+          {
+            "type": "UInt8",
+            "name": "Support Vote Sent"
+          },
+          {
+            "type": "UInt8",
+            "name": "Host Reputation"
+          },
+          {
+            "type": "UInt8",
+            "name": "Flags"
+          }
+        ]
+      },
+      {
+        "name": "Transferee Address",
+        "hookstate_key": [
+          {
+            "type": "VarString",
+            "name": "Key",
+            "pattern": "EVR",
+            "byte_length": 3,
+            "exclude": true
+          },
+          {
+            "type": "UInt8",
+            "name": "Index",
+            "pattern": "4",
+            "exclude": true
+          },
+          {
+            "type": "VarString",
+            "name": "padding",
+            "byte_length": 8,
+            "pattern": "00000000",
+            "exclude": true
+          },
+          {
+            "type": "AccountID",
+            "name": "Account"
+          }
+        ],
+        "hookstate_data": [
+          {
+            "type": "AccountID",
+            "name": "Transferring Host Address"
+          },
+          {
+            "type": "UInt64",
+            "name": "Registration Ledger"
+          },
+          {
+            "type": "VarString",
+            "name": "TokenID",
+            "byte_length": 32,
+            "binary": true
+          }
+        ]
+      },
+      {
+        "name": "Candidate Owner",
+        "hookstate_key": [
+          {
+            "type": "VarString",
+            "name": "Key",
+            "pattern": "EVR",
+            "byte_length": 3,
+            "exclude": true
+          },
+          {
+            "type": "UInt8",
+            "name": "Index",
+            "pattern": "5",
+            "exclude": true
+          },
+          {
+            "type": "VarString",
+            "name": "padding",
+            "byte_length": 8,
+            "pattern": "00000000",
+            "exclude": true
+          },
+          {
+            "type": "AccountID",
+            "name": "Account"
+          }
+        ],
+        "hookstate_data": [
+          {
+            "type": "Hash256",
+            "name": "Governor Hash"
+          },
+          {
+            "type": "Hash256",
+            "name": "Registry Hash"
+          },
+          {
+            "type": "Hash256",
+            "name": "Heartbeat Hash"
+          }
+        ]
+      },
+      {
+        "name": "Candidate ID",
+        "hookstate_key": [
+          {
+            "type": "VarString",
+            "name": "Key",
+            "pattern": "EVR",
+            "byte_length": 3,
+            "exclude": true
+          },
+          {
+            "type": "UInt8",
+            "name": "Index",
+            "pattern": "6",
+            "exclude": true
+          },
+          {
+            "type": "VarString",
+            "name": "CandicateID",
+            "byte_length": 28
+          }
+        ],
+        "hookstate_data": [
+          {
+            "type": "AccountID",
+            "name": "Owner Address"
+          },
+          {
+            "type": "UInt32",
+            "name": "Candidate Idx"
+          },
+          {
+            "type": "VarString",
+            "name": "Short Name",
+            "byte_length": 20
+          },
+          {
+            "type": "UInt64",
+            "name": "Created Timestamp"
+          },
+          {
+            "type": "UInt64",
+            "name": "Proposal Fee"
+          },
+          {
+            "type": "UInt32",
+            "name": "Positive Vote Count"
+          },
+          {
+            "type": "UInt64",
+            "name": "Last Vote Timestamp"
+          },
+          {
+            "type": "UInt8",
+            "name": "Status"
+          },
+          {
+            "type": "UInt64",
+            "name": "Status Change Timestamp"
+          },
+          {
+            "type": "UInt8",
+            "name": "Foundation Vote Status"
+          }
+        ]
+      }
+    ]
+  }
+}
