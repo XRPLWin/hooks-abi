@@ -1306,7 +1306,7 @@
           },
           {
             "type": "VarString",
-            "name": "CandicateID",
+            "name": "CandidateID",
             "byte_length": 28
           }
         ],
