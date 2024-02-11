@@ -20,21 +20,6 @@
             "name": "price"
           }
         ]
-      },
-      {
-        "name": "unknown oracle",
-        "hookstate_key": [
-          {
-            "type": "Hash256",
-            "name": "hash(issuer,currency)"
-          }
-        ],
-        "hookstate_data": [
-          {
-            "type": "XFL",
-            "name": "price"
-          }
-        ]
       }
     ]
   }
