@@ -1,0 +1,33 @@
+{
+    "name": "evernode-claimer",
+    "hook_account": "rhMboq72S1sLBBxv4PS6ezwJLbgfSJFG4b",
+    "hook_namespace_id": "0",
+    "hook_definition": {
+      "name": "Evernode Vlaims",
+      "description": "Evernode Claims",
+      "hook_states": [
+        {
+          "name": "Claimed accounts",
+          "hookstate_key": [
+            {
+                "type": "VarString",
+                "name": "padding",
+                "byte_length": 12,
+                "exclude": true
+            },
+            {
+                "type": "AccountID",
+                "name": "Claimer",
+                "exclude": false
+            }
+          ],
+          "hookstate_data": [
+            {
+                "type": "UInt32",
+                "name": "Data (UInt32)"
+            }
+          ]
+        }
+      ]
+    }
+  }
