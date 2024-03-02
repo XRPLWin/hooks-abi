@@ -24,7 +24,7 @@
           "hookstate_data": [
             {
                 "type": "UInt32",
-                "name": "LedgerIndex or 4294967295 (NULL)"
+                "name": "LedgerIndex or 4294967295 (if claimed)"
             }
           ]
         },
