@@ -10,7 +10,7 @@
     "hook_states": {
       "name": "Oracle",
       "description": "Denis Oracle",
-      "hook_states": [
+      "fields": [
         {
           "name": "EVR/XAH Oracle",
           "hookstate_key": [
@@ -47,7 +47,7 @@
     "invoke_blobs": {
       "name": "Oracle Invoke Blob",
       "description": "Oracle Invoke Blob",
-      "invoke_blobs": [
+      "fields": [
         {
           "name": "Oracle Set",
           "value": [
