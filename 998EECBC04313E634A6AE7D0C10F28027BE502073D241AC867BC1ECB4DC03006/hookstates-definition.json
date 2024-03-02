@@ -8,7 +8,7 @@
       "hook_states": {
           "name": "Evernode Claims",
           "description": "Evernode Claims",
-          "hook_states": [
+          "fields": [
             {
               "name": "Claimed accounts",
               "hookstate_key": [
