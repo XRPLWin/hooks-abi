@@ -3,7 +3,7 @@
     "hook_account": "rhMboq72S1sLBBxv4PS6ezwJLbgfSJFG4b",
     "hook_namespace_id": "0",
     "hook_definition": {
-      "name": "Evernode Vlaims",
+      "name": "Evernode Claims",
       "description": "Evernode Claims",
       "hook_states": [
         {
@@ -29,7 +29,7 @@
           ]
         },
         {
-            "name": "Emit record",
+            "name": "Pending emit records",
             "hookstate_key": [
               {
                   "type": "Hash256",
