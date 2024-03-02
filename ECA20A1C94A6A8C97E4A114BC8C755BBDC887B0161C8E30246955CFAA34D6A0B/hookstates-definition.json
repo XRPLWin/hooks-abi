@@ -10,7 +10,7 @@
     "hook_states": {
       "name": "Evernode",
       "description": "Evernode",
-      "hook_states": [
+      "fields": [
         {
           "name": "Issuer Address",
           "hookstate_key": [
