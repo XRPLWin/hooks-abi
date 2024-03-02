@@ -5,46 +5,50 @@
     "hook_definition": {
       "name": "Evernode Claims",
       "description": "Evernode Claims",
-      "hook_states": [
-        {
-          "name": "Claimed accounts",
-          "hookstate_key": [
+      "hook_states": {
+          "name": "Evernode Claims",
+          "description": "Evernode Claims",
+          "hook_states": [
             {
-                "type": "VarString",
-                "name": "padding",
-                "byte_length": 12,
-                "exclude": true
+              "name": "Claimed accounts",
+              "hookstate_key": [
+                {
+                    "type": "VarString",
+                    "name": "padding",
+                    "byte_length": 12,
+                    "exclude": true
+                },
+                {
+                    "type": "AccountID",
+                    "name": "Claimer",
+                    "exclude": false
+                }
+              ],
+              "hookstate_data": [
+                {
+                    "type": "UInt32",
+                    "name": "LedgerIndex or 4294967295 (if claimed)"
+                }
+              ]
             },
             {
-                "type": "AccountID",
-                "name": "Claimer",
-                "exclude": false
-            }
-          ],
-          "hookstate_data": [
-            {
-                "type": "UInt32",
-                "name": "LedgerIndex or 4294967295 (if claimed)"
+                "name": "Pending emit records",
+                "hookstate_key": [
+                  {
+                      "type": "Hash256",
+                      "name": "Emitted TX",
+                      "exclude": false
+                  }
+                ],
+                "hookstate_data": [
+                  {
+                    "type": "AccountID",
+                    "name": "Claimer",
+                    "exclude": false
+                  }
+                ]
             }
           ]
-        },
-        {
-            "name": "Pending emit records",
-            "hookstate_key": [
-              {
-                  "type": "Hash256",
-                  "name": "Emitted TX",
-                  "exclude": false
-              }
-            ],
-            "hookstate_data": [
-              {
-                "type": "AccountID",
-                "name": "Claimer",
-                "exclude": false
-              }
-            ]
-        }
-      ]
+      }
     }
   }
