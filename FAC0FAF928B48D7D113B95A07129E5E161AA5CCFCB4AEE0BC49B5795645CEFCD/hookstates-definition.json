@@ -10,7 +10,7 @@
     "hook_states": {
       "name": "Governance",
       "description": "Governance",
-      "hook_states": [
+      "fields": [
         {
           "name": "Current member count",
           "hookstate_key": [
@@ -400,7 +400,7 @@
     "txn_parameters": {
       "name": "Governance",
       "description": "Governance",
-      "txn_parameters": [
+      "fields": [
         {
           "name": "Layer",
           "transaction_types": [
@@ -592,7 +592,7 @@
     "hook_parameters": {
       "name": "Governance",
       "description": "Governance",
-      "hook_parameters": [
+      "fields": [
         {
           "hookparam_key": [
             {
