@@ -27,6 +27,23 @@
                 "name": "Data (UInt32)"
             }
           ]
+        },
+        {
+            "name": "Emit record",
+            "hookstate_key": [
+              {
+                  "type": "Hash256",
+                  "name": "Emitted TX",
+                  "exclude": false
+              }
+            ],
+            "hookstate_data": [
+              {
+                "type": "AccountID",
+                "name": "Claimer",
+                "exclude": false
+              }
+            ]
         }
       ]
     }
