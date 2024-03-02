@@ -1,26 +1,79 @@
 {
+  "name": "oracle",
   "hook_account": "rsMCzsxZYSXafH3Egj1jpGemgQjagtnXEk",
   "hook_namespace_id": "9202AF6CE925B26AE6B25ADFFF0B2705147E195FA38DD58AE6ECC58ED263751F",
   "hook_definition": {
     "name": "Oracle",
     "description": "Denis Oracle",
-    "hook_states": [
-      {
-        "name": "EVR/XAH Oracle",
-        "hookstate_key": [
-          {
-            "type": "Hash256",
-            "name": "EVR/XAH",
-            "pattern": "D776255B7AE7126E091A0A3CD895852855FBECD597D02C5FF0335BD7C4BF018C"
-          }
-        ],
-        "hookstate_data": [
-          {
-            "type": "XFL",
-            "name": "price"
-          }
-        ]
-      }
-    ]
+    "hook_hash": "",
+    "version": [],
+    "hook_states": {
+      "name": "Oracle",
+      "description": "Denis Oracle",
+      "hook_states": [
+        {
+          "name": "EVR/XAH Oracle",
+          "hookstate_key": [
+            {
+              "type": "Hash256",
+              "name": "EVR/XAH",
+              "pattern": "D776255B7AE7126E091A0A3CD895852855FBECD597D02C5FF0335BD7C4BF018C"
+            }
+          ],
+          "hookstate_data": [
+            {
+              "type": "XFL",
+              "name": "price"
+            }
+          ]
+        },
+        {
+          "name": "Unknown Oracle",
+          "hookstate_key": [
+            {
+              "type": "Hash256",
+              "name": "HASH(issuer,currency)"
+            }
+          ],
+          "hookstate_data": [
+            {
+              "type": "XFL",
+              "name": "price"
+            }
+          ]
+        }
+      ]
+    },
+    "invoke_blobs": {
+      "name": "Oracle Invoke Blob",
+      "description": "Oracle Invoke Blob",
+      "invoke_blobs": [
+        {
+          "name": "Oracle Set",
+          "value": [
+            {
+              "type": "Array",
+              "name": "Oracles",
+              "array": [
+                {
+                  "type": "AccountID",
+                  "name": "issuer"
+                },
+                {
+                  "type": "VarString",
+                  "byte_length": 20,
+                  "name": "currency"
+                },
+                {
+                  "type": "XFL",
+                  "name": "value"
+                }
+              ],
+              "length_prefix": true
+            }
+          ]
+        }
+      ]
+    }
   }
 }
