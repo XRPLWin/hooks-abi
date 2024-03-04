@@ -324,6 +324,67 @@
             {
               "type": "UInt8",
               "name": "Host Reputation Threshold"
+            },
+            {
+              "type": "UInt32",
+              "name": "Host Min Instance Count"
+            }
+          ]
+        },
+        {
+          "name": "Reward Configuration",
+          "hookstate_key": [
+            {
+              "type": "VarString",
+              "name": "Key",
+              "pattern": "EVR",
+              "byte_length": 3,
+              "exclude": true
+            },
+            {
+              "type": "UInt8",
+              "name": "Prefix",
+              "pattern": "1",
+              "exclude": true
+            },
+            {
+              "type": "VarString",
+              "name": "",
+              "byte_length": 27,
+              "pattern": "000000000000000000000000000",
+              "exclude": true
+            },
+            {
+              "type": "UInt8",
+              "name": "Index",
+              "pattern": "8",
+              "exclude": true
+            }
+          ],
+          "hookstate_data": [
+            {
+              "type": "UInt8",
+              "name": "Epoch Count"
+            },
+            {
+              "type": "UInt32",
+              "name": "First Epoch Reward Quota"
+            },
+            {
+              "type": "UInt32",
+              "name": "Epoch Reward Amount"
+            },
+            {
+              "type": "UInt32",
+              "name": "Reward Start Moment"
+            },
+            {
+              "type": "UInt16",
+              "name": "Accumulated Reward Frequency"
+            },
+            {
+              "type": "UInt8",
+              "name": "Host Reputation Threshold"
             }
           ]
         },
@@ -786,6 +847,57 @@
             {
               "type": "XFL",
               "name": "Epoch Pool"
+            },
+            {
+              "type": "XFL",
+              "name": "Host Max Lease Amount"
+            }
+          ]
+        },
+        {
+          "name": "Reward Info",
+          "hookstate_key": [
+            {
+              "type": "VarString",
+              "name": "Key",
+              "pattern": "EVR",
+              "byte_length": 3,
+              "exclude": true
+            },
+            {
+              "type": "UInt8",
+              "name": "Index",
+              "pattern": "54",
+              "exclude": true
+            },
+            {
+              "type": "VarString",
+              "name": "padding",
+              "byte_length": 28,
+              "pattern": "0000000000000000000000000000",
+              "exclude": true
+            }
+          ],
+          "hookstate_data": [
+            {
+              "type": "UInt8",
+              "name": "Epoch"
+            },
+            {
+              "type": "UInt32",
+              "name": "Saved Moment"
+            },
+            {
+              "type": "UInt32",
+              "name": "Prev Moment Active Host Count"
+            },
+            {
+              "type": "UInt32",
+              "name": "Cur Moment Active Host Count"
+            },
+            {
+              "type": "XFL",
+              "name": "Epoch Pool"
             }
           ]
         },
@@ -956,6 +1068,135 @@
             {
               "type": "XFL",
               "name": "Accumulated Reward Amount"
+            }
+          ]
+        },
+        {
+          "name": "Host Address",
+          "hookstate_key": [
+            {
+              "type": "VarString",
+              "name": "Key",
+              "pattern": "EVR",
+              "byte_length": 3,
+              "exclude": true
+            },
+            {
+              "type": "UInt8",
+              "name": "Index",
+              "pattern": "3",
+              "exclude": true
+            },
+            {
+              "type": "VarString",
+              "name": "padding",
+              "byte_length": 8,
+              "pattern": "00000000",
+              "exclude": true
+            },
+            {
+              "type": "AccountID",
+              "name": "Account"
+            }
+          ],
+          "hookstate_data": [
+            {
+              "type": "VarString",
+              "name": "TokenID",
+              "byte_length": 32,
+              "binary": true
+            },
+            {
+              "type": "VarString",
+              "name": "Country Code",
+              "byte_length": 2
+            },
+            {
+              "type": "VarString",
+              "name": "Reserved",
+              "byte_length": 8
+            },
+            {
+              "type": "VarString",
+              "name": "Description",
+              "byte_length": 26
+            },
+            {
+              "type": "UInt64",
+              "name": "Registration Ledger"
+            },
+            {
+              "type": "UInt64",
+              "name": "Registration Fee"
+            },
+            {
+              "type": "UInt32",
+              "name": "No of Total Instances"
+            },
+            {
+              "type": "UInt32",
+              "name": "No of Active Instances"
+            },
+            {
+              "type": "UInt64",
+              "name": "Last Heartbeat Index"
+            },
+            {
+              "type": "Array",
+              "name": "Version",
+              "array": [
+                {
+                  "type": "UInt8",
+                  "name": "major"
+                },
+                {
+                  "type": "UInt8",
+                  "name": "minor"
+                },
+                {
+                  "type": "UInt8",
+                  "name": "patch"
+                }
+              ],
+              "array_length": 3,
+              "byte_length": 3,
+              "delimiter": "."
+            },
+            {
+              "type": "UInt64",
+              "name": "Registration Timestamp"
+            },
+            {
+              "type": "UInt8",
+              "name": "Transfer Flag"
+            },
+            {
+              "type": "UInt32",
+              "name": "Last Vote Candidate Idx"
+            },
+            {
+              "type": "UInt64",
+              "name": "Last Vote Timestamp"
+            },
+            {
+              "type": "UInt8",
+              "name": "Support Vote Sent"
+            },
+            {
+              "type": "UInt8",
+              "name": "Host Reputation"
+            },
+            {
+              "type": "UInt8",
+              "name": "Flags"
+            },
+            {
+              "type": "UInt64",
+              "name": "Transfer Timestamp"
+            },
+            {
+              "type": "XFL",
+              "name": "Host Lease Amount"
             }
           ]
         },
