@@ -277,12 +277,16 @@
       ]
     },
     "invoke_blobs": {
+      "name": "Invoke Blob",
+      "description": "Scores Invoke Blob",
       "fields": [
         {
+          "name": "Scores Set",
           "value": [
             {
               "type": "Array",
               "name": "Scores",
+              "byte_length": 64,
               "array": [
                 {
                   "type": "UInt8",
@@ -541,7 +545,7 @@
                   "name": "Score"
                 }
               ],
-              "length_prefix": true
+              "delimiter": ","
             }
           ]
         }
