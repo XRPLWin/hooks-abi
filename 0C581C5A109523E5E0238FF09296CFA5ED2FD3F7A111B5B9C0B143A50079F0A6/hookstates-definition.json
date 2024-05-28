@@ -1,548 +1,75 @@
 {
-  "name": "evernode-reputation",
-  "hook_account": "rBvKgF3jSZWdJcwSsmoJspoXLLDVLDp6jg",
-  "hook_namespace_id": "01EAF09326B4911554384121FF56FA8FECC215FDDE2EC35D9E59F2C53EC665A0",
+  "name": "oracle",
+  "hook_account": "rsMCzsxZYSXafH3Egj1jpGemgQjagtnXEk",
+  "hook_namespace_id": "9202AF6CE925B26AE6B25ADFFF0B2705147E195FA38DD58AE6ECC58ED263751F",
   "hook_definition": {
-    "name": "Evernode Reputation",
-    "description": "Evernode Reputation",
-    "hook_hash": "F3D61A99804C8A825611427E3BC9070CEA2F0E26EFB5702D984202EB10A0AFF8",
-    "namespace_id": "01EAF09326B4911554384121FF56FA8FECC215FDDE2EC35D9E59F2C53EC665A0",
+    "name": "Oracle",
+    "description": "Denis Oracle",
+    "hook_hash": "",
     "version": [],
-    "hook_parameters": {
-      "fields": [
-        {
-          "name": "Issuer Address",
-          "hookparam_key": [
-            {
-              "type": "VarString",
-              "name": "Key",
-              "pattern": "EVR",
-              "byte_length": 3,
-              "exclude": true
-            },
-            {
-              "type": "UInt8",
-              "name": "Prefix",
-              "pattern": "1",
-              "exclude": true
-            },
-            {
-              "type": "VarString",
-              "name": "",
-              "byte_length": 27,
-              "pattern": null,
-              "binary": true,
-              "exclude": true
-            },
-            {
-              "type": "UInt8",
-              "name": "Index",
-              "pattern": "1",
-              "exclude": true
-            }
-          ],
-          "hookparam_data": [
-            {
-              "type": "AccountID",
-              "name": "Governance Account"
-            }
-          ]
-        }
-      ]
-    },
     "hook_states": {
+      "name": "Oracle",
+      "description": "Denis Oracle",
       "fields": [
         {
-          "name": "Cleanup Moment",
+          "name": "EVR/XAH Oracle",
           "hookstate_key": [
             {
-              "type": "VarString",
-              "name": "",
-              "byte_length": 24,
-              "pattern": null,
-              "binary": true,
-              "exclude": true
-            },
-            {
-              "type": "VarString",
-              "name": "Special",
-              "pattern": "FFFFFFFFFFFFFFFF",
-              "binary": true,
-              "byte_length": 8
+              "type": "Hash256",
+              "name": "EVR/XAH",
+              "pattern": "D776255B7AE7126E091A0A3CD895852855FBECD597D02C5FF0335BD7C4BF018C"
             }
           ],
           "hookstate_data": [
             {
-              "type": "UInt64",
-              "name": "Cleanup Moment"
+              "type": "XFL",
+              "name": "price"
             }
           ]
         },
         {
-          "name": "Host Count in that moment",
+          "name": "Unknown Oracle",
           "hookstate_key": [
             {
-              "type": "VarString",
-              "name": "",
-              "byte_length": 24,
-              "pattern": null,
-              "binary": true,
-              "exclude": true
-            },
-            {
-              "type": "UInt64",
-              "name": "Moment"
+              "type": "Hash256",
+              "name": "HASH(issuer,currency)"
             }
           ],
           "hookstate_data": [
             {
-              "type": "UInt64",
-              "name": "Host Count"
-            }
-          ]
-        },
-        {
-          "name": "Reputation Account",
-          "hookstate_key": [
-            {
-              "type": "VarString",
-              "name": "",
-              "byte_length": 16,
-              "pattern": null,
-              "binary": true,
-              "exclude": true
-            },
-            {
-              "type": "UInt64",
-              "name": "Moment"
-            },
-            {
-              "type": "UInt64",
-              "name": "Ordered HostID"
-            }
-          ],
-          "hookstate_data": [
-            {
-              "type": "AccountID",
-              "name": "Reputation Account"
-            }
-          ]
-        },
-        {
-          "name": "Reputation",
-          "hookstate_key": [
-            {
-              "type": "VarString",
-              "name": "",
-              "byte_length": 12,
-              "pattern": null,
-              "binary": true,
-              "exclude": true
-            },
-            {
-              "type": "AccountID",
-              "name": "Reputation Account"
-            }
-          ],
-          "hookstate_data": [
-            {
-              "type": "UInt64",
-              "name": "Last Registered Moment"
-            },
-            {
-              "type": "UInt64",
-              "name": "Score Numerator"
-            },
-            {
-              "type": "UInt64",
-              "name": "Score Denominator"
-            }
-          ]
-        },
-        {
-          "name": "Ordered HostID",
-          "hookstate_key": [
-            {
-              "type": "VarString",
-              "name": "",
-              "byte_length": 4,
-              "pattern": null,
-              "binary": true,
-              "exclude": true
-            },
-            {
-              "type": "UInt64",
-              "name": "Next Moment"
-            },
-            {
-              "type": "AccountID",
-              "name": "Reputation Account"
-            }
-          ],
-          "hookstate_data": [
-            {
-              "type": "UInt64",
-              "name": "Ordered HostID"
-            }
-          ]
-        }
-      ]
-    },
-    "txn_parameters": {
-      "fields": [
-        {
-          "transaction_types": [
-            "Payment"
-          ],
-          "otxnparam_key": [
-            {
-              "type": "VarString",
-              "name": "Key",
-              "pattern": "EVR",
-              "byte_length": 3,
-              "exclude": true
-            },
-            {
-              "type": "UInt8",
-              "name": "Prefix",
-              "pattern": "1",
-              "exclude": true
-            },
-            {
-              "type": "VarString",
-              "name": "",
-              "byte_length": 27,
-              "pattern": null,
-              "binary": true,
-              "exclude": true
-            },
-            {
-              "type": "UInt8",
-              "name": "Index",
-              "pattern": "2",
-              "exclude": true
-            }
-          ],
-          "otxnparam_data": [
-            {
-              "type": "VarString",
-              "name": "Event Type: Hook Update",
-              "pattern": "evnHookUpdate",
-              "byte_length": 13
-            }
-          ]
-        },
-        {
-          "transaction_types": [
-            "Invoke"
-          ],
-          "otxnparam_key": [
-            {
-              "type": "VarString",
-              "name": "Key",
-              "pattern": "EVR",
-              "byte_length": 3,
-              "exclude": true
-            },
-            {
-              "type": "UInt8",
-              "name": "Prefix",
-              "pattern": "1",
-              "exclude": true
-            },
-            {
-              "type": "VarString",
-              "name": "",
-              "byte_length": 27,
-              "pattern": null,
-              "binary": true,
-              "exclude": true
-            },
-            {
-              "type": "UInt8",
-              "name": "Index",
-              "pattern": "2",
-              "exclude": true
-            }
-          ],
-          "otxnparam_data": [
-            {
-              "type": "VarString",
-              "name": "Event Type: Host Send Reputation",
-              "pattern": "evnHostSendReputation",
-              "byte_length": 21
+              "type": "XFL",
+              "name": "price"
             }
           ]
         }
       ]
     },
     "invoke_blobs": {
+      "name": "Oracle Invoke Blob",
+      "description": "Oracle Invoke Blob",
       "fields": [
         {
+          "name": "Oracle Set",
           "value": [
             {
               "type": "Array",
-              "name": "Scores",
-              "byte_length": 64,
+              "name": "Oracles",
               "array": [
                 {
-                  "type": "UInt8",
-                  "name": "Score"
+                  "type": "AccountID",
+                  "name": "issuer"
                 },
                 {
-                  "type": "UInt8",
-                  "name": "Score"
+                  "type": "VarString",
+                  "byte_length": 20,
+                  "name": "currency"
                 },
                 {
-                  "type": "UInt8",
-                  "name": "Score"
-                },
-                {
-                  "type": "UInt8",
-                  "name": "Score"
-                },
-                {
-                  "type": "UInt8",
-                  "name": "Score"
-                },
-                {
-                  "type": "UInt8",
-                  "name": "Score"
-                },
-                {
-                  "type": "UInt8",
-                  "name": "Score"
-                },
-                {
-                  "type": "UInt8",
-                  "name": "Score"
-                },
-                {
-                  "type": "UInt8",
-                  "name": "Score"
-                },
-                {
-                  "type": "UInt8",
-                  "name": "Score"
-                },
-                {
-                  "type": "UInt8",
-                  "name": "Score"
-                },
-                {
-                  "type": "UInt8",
-                  "name": "Score"
-                },
-                {
-                  "type": "UInt8",
-                  "name": "Score"
-                },
-                {
-                  "type": "UInt8",
-                  "name": "Score"
-                },
-                {
-                  "type": "UInt8",
-                  "name": "Score"
-                },
-                {
-                  "type": "UInt8",
-                  "name": "Score"
-                },
-                {
-                  "type": "UInt8",
-                  "name": "Score"
-                },
-                {
-                  "type": "UInt8",
-                  "name": "Score"
-                },
-                {
-                  "type": "UInt8",
-                  "name": "Score"
-                },
-                {
-                  "type": "UInt8",
-                  "name": "Score"
-                },
-                {
-                  "type": "UInt8",
-                  "name": "Score"
-                },
-                {
-                  "type": "UInt8",
-                  "name": "Score"
-                },
-                {
-                  "type": "UInt8",
-                  "name": "Score"
-                },
-                {
-                  "type": "UInt8",
-                  "name": "Score"
-                },
-                {
-                  "type": "UInt8",
-                  "name": "Score"
-                },
-                {
-                  "type": "UInt8",
-                  "name": "Score"
-                },
-                {
-                  "type": "UInt8",
-                  "name": "Score"
-                },
-                {
-                  "type": "UInt8",
-                  "name": "Score"
-                },
-                {
-                  "type": "UInt8",
-                  "name": "Score"
-                },
-                {
-                  "type": "UInt8",
-                  "name": "Score"
-                },
-                {
-                  "type": "UInt8",
-                  "name": "Score"
-                },
-                {
-                  "type": "UInt8",
-                  "name": "Score"
-                },
-                {
-                  "type": "UInt8",
-                  "name": "Score"
-                },
-                {
-                  "type": "UInt8",
-                  "name": "Score"
-                },
-                {
-                  "type": "UInt8",
-                  "name": "Score"
-                },
-                {
-                  "type": "UInt8",
-                  "name": "Score"
-                },
-                {
-                  "type": "UInt8",
-                  "name": "Score"
-                },
-                {
-                  "type": "UInt8",
-                  "name": "Score"
-                },
-                {
-                  "type": "UInt8",
-                  "name": "Score"
-                },
-                {
-                  "type": "UInt8",
-                  "name": "Score"
-                },
-                {
-                  "type": "UInt8",
-                  "name": "Score"
-                },
-                {
-                  "type": "UInt8",
-                  "name": "Score"
-                },
-                {
-                  "type": "UInt8",
-                  "name": "Score"
-                },
-                {
-                  "type": "UInt8",
-                  "name": "Score"
-                },
-                {
-                  "type": "UInt8",
-                  "name": "Score"
-                },
-                {
-                  "type": "UInt8",
-                  "name": "Score"
-                },
-                {
-                  "type": "UInt8",
-                  "name": "Score"
-                },
-                {
-                  "type": "UInt8",
-                  "name": "Score"
-                },
-                {
-                  "type": "UInt8",
-                  "name": "Score"
-                },
-                {
-                  "type": "UInt8",
-                  "name": "Score"
-                },
-                {
-                  "type": "UInt8",
-                  "name": "Score"
-                },
-                {
-                  "type": "UInt8",
-                  "name": "Score"
-                },
-                {
-                  "type": "UInt8",
-                  "name": "Score"
-                },
-                {
-                  "type": "UInt8",
-                  "name": "Score"
-                },
-                {
-                  "type": "UInt8",
-                  "name": "Score"
-                },
-                {
-                  "type": "UInt8",
-                  "name": "Score"
-                },
-                {
-                  "type": "UInt8",
-                  "name": "Score"
-                },
-                {
-                  "type": "UInt8",
-                  "name": "Score"
-                },
-                {
-                  "type": "UInt8",
-                  "name": "Score"
-                },
-                {
-                  "type": "UInt8",
-                  "name": "Score"
-                },
-                {
-                  "type": "UInt8",
-                  "name": "Score"
-                },
-                {
-                  "type": "UInt8",
-                  "name": "Score"
-                },
-                {
-                  "type": "UInt8",
-                  "name": "Score"
-                },
-                {
-                  "type": "UInt8",
-                  "name": "Score"
+                  "type": "XFL",
+                  "name": "value"
                 }
               ],
-              "delimiter": ","
+              "length_prefix": true
             }
           ]
         }
