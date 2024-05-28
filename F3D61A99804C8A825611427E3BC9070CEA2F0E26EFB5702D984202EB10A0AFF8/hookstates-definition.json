@@ -283,7 +283,6 @@
             {
               "type": "Array",
               "name": "Scores",
-              "byte_length": 64,
               "array": [
                 {
                   "type": "UInt8",
