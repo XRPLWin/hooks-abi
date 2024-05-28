@@ -227,7 +227,8 @@
             {
               "type": "VarString",
               "name": "Event Type: Hook Update",
-              "pattern": "evnHookUpdate"
+              "pattern": "evnHookUpdate",
+              "byte_length": 13
             }
           ]
         },
@@ -268,7 +269,8 @@
             {
               "type": "VarString",
               "name": "Event Type: Host Send Reputation",
-              "pattern": "evnHostSendReputation"
+              "pattern": "evnHostSendReputation",
+              "byte_length": 21
             }
           ]
         }
