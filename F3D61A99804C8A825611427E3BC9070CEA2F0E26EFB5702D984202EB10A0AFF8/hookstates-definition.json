@@ -541,7 +541,7 @@
                   "name": "Score"
                 }
               ],
-              "delimiter": ","
+              "length_prefix": true
             }
           ]
         }
