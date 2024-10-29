@@ -1601,6 +1601,18 @@
             {
               "type": "UInt8",
               "name": "Foundation Vote Status"
+            },
+            {
+              "type": "UInt8",
+              "name": "Foundation Vote Status"
+            },
+            {
+              "type": "UInt64",
+              "name": "Elect Purge Last Try Timestamp"
+            },
+            {
+              "type": "UInt8",
+              "name": "Complete Acknowledged"
             }
           ]
         }
