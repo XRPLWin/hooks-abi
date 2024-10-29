@@ -1579,7 +1579,7 @@
               "name": "Created Timestamp"
             },
             {
-              "type": "UInt64",
+              "type": "XFL",
               "name": "Proposal Fee"
             },
             {
@@ -1597,10 +1597,6 @@
             {
               "type": "UInt64",
               "name": "Status Change Timestamp"
-            },
-            {
-              "type": "UInt8",
-              "name": "Foundation Vote Status"
             },
             {
               "type": "UInt8",
