@@ -1604,11 +1604,11 @@
             },
             {
               "type": "UInt64",
-              "name": "elect_purge_last_try_timestamp"
+              "name": "Elect Purge Last Try Timestamp"
             },
             {
               "type": "UInt8",
-              "name": "complete_acknowledged"
+              "name": "Complete Acknowledged"
             }
           ]
         }
