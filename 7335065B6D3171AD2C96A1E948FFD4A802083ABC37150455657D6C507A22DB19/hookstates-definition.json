@@ -582,55 +582,6 @@
           ]
         },
         {
-          "name": "Governance Configuration",
-          "hookstate_key": [
-            {
-              "type": "VarString",
-              "name": "Key",
-              "pattern": "EVR",
-              "byte_length": 3,
-              "exclude": true
-            },
-            {
-              "type": "UInt8",
-              "name": "Prefix",
-              "pattern": "1",
-              "exclude": true
-            },
-            {
-              "type": "VarString",
-              "name": "",
-              "byte_length": 27,
-              "pattern": "000000000000000000000000000",
-              "exclude": true
-            },
-            {
-              "type": "UInt8",
-              "name": "Index",
-              "pattern": "14",
-              "exclude": true
-            }
-          ],
-          "hookstate_data": [
-            {
-              "type": "UInt32",
-              "name": "Eligibility Period"
-            },
-            {
-              "type": "UInt32",
-              "name": "Candidate Life Period"
-            },
-            {
-              "type": "UInt32",
-              "name": "Candidate Election Period"
-            },
-            {
-              "type": "UInt16",
-              "name": "Candidate Support Average"
-            }
-          ]
-        },
-        {
           "name": "Network Configuration",
           "hookstate_key": [
             {
@@ -898,69 +849,6 @@
             {
               "type": "XFL",
               "name": "Epoch Pool"
-            }
-          ]
-        },
-        {
-          "name": "Governance Info",
-          "hookstate_key": [
-            {
-              "type": "VarString",
-              "name": "Key",
-              "pattern": "EVR",
-              "byte_length": 3,
-              "exclude": true
-            },
-            {
-              "type": "UInt8",
-              "name": "Index",
-              "pattern": "55",
-              "exclude": true
-            },
-            {
-              "type": "VarString",
-              "name": "padding",
-              "byte_length": 28,
-              "pattern": "0000000000000000000000000000",
-              "exclude": true
-            }
-          ],
-          "hookstate_data": [
-            {
-              "type": "UInt8",
-              "name": "Governance Mode"
-            },
-            {
-              "type": "UInt32",
-              "name": "Last Candidate Idx"
-            },
-            {
-              "type": "UInt32",
-              "name": "Voter Base Count"
-            },
-            {
-              "type": "UInt64",
-              "name": "Voter Base Count Changed Timestamp"
-            },
-            {
-              "type": "UInt32",
-              "name": "Foundation Last Voted Candidate Idx"
-            },
-            {
-              "type": "UInt64",
-              "name": "Foundation Last Voted Timestamp"
-            },
-            {
-              "type": "Hash256",
-              "name": "Elected Proposal Unique Id"
-            },
-            {
-              "type": "UInt64",
-              "name": "Proposal Elected Timestamp"
-            },
-            {
-              "type": "UInt8",
-              "name": "Updated Hook Count"
             }
           ]
         },
@@ -1492,7 +1380,7 @@
           ]
         },
         {
-          "name": "Gov New Hook Proposals",
+          "name": "Gov: Configuration",
           "hookstate_key": [
             {
               "type": "VarString",
@@ -1503,77 +1391,45 @@
             },
             {
               "type": "UInt8",
-              "name": "Index",
-              "pattern": "6",
+              "name": "Prefix",
+              "pattern": "1",
+              "exclude": true
+            },
+            {
+              "type": "VarString",
+              "name": "",
+              "byte_length": 27,
+              "pattern": "000000000000000000000000000",
               "exclude": true
             },
             {
               "type": "UInt8",
-              "name": "Mode",
-              "pattern": "1",
-              "exclude": false
-            },
-            {
-              "type": "VarString",
-              "name": "New Hookhash (partial)",
-              "byte_length": 27,
-              "binary": true
+              "name": "Index",
+              "pattern": "14",
+              "exclude": true
             }
           ],
           "hookstate_data": [
             {
-              "type": "AccountID",
-              "name": "Voter Host Account"
+              "type": "UInt32",
+              "name": "Eligibility Period"
             },
             {
               "type": "UInt32",
-              "name": "Candidate Idx"
-            },
-            {
-              "type": "VarString",
-              "name": "Short Name",
-              "byte_length": 20
-            },
-            {
-              "type": "UInt64",
-              "name": "Created Timestamp"
-            },
-            {
-              "type": "XFL",
-              "name": "Proposal Fee (paid by voter)"
+              "name": "Candidate Life Period"
             },
             {
               "type": "UInt32",
-              "name": "Positive Vote Count"
+              "name": "Candidate Election Period"
             },
             {
-              "type": "UInt64",
-              "name": "Last Vote Timestamp"
-            },
-            {
-              "type": "UInt8",
-              "name": "Current Status"
-            },
-            {
-              "type": "UInt64",
-              "name": "Last Status Change Timestamp"
-            },
-            {
-              "type": "UInt8",
-              "name": "Foundation Vote Status"
-            },
-            {
-              "type": "UInt64",
-              "name": "Elect Purge Last Try Timestamp"
-            },
-            {
-              "type": "UInt8",
-              "name": "Acknowledged as Complete"
+              "type": "UInt16",
+              "name": "Candidate Support Average"
             }
           ]
         },
         {
-          "name": "Gov New Hook Proposals (Hooks)",
+          "name": "Gov: Info",
           "hookstate_key": [
             {
               "type": "VarString",
@@ -1585,42 +1441,58 @@
             {
               "type": "UInt8",
               "name": "Index",
-              "pattern": "5",
+              "pattern": "55",
               "exclude": true
             },
             {
               "type": "VarString",
               "name": "padding",
-              "byte_length": 8,
-              "pattern": "00000000",
+              "byte_length": 28,
+              "pattern": "0000000000000000000000000000",
               "exclude": true
-            },
-            {
-              "type": "AccountID",
-              "name": "Voter Host Account"
             }
           ],
           "hookstate_data": [
             {
-              "type": "Hash256",
-              "name": "Proposed Governor Hook Hash"
+              "type": "UInt8",
+              "name": "Governance Mode"
+            },
+            {
+              "type": "UInt32",
+              "name": "Last Candidate Idx"
+            },
+            {
+              "type": "UInt32",
+              "name": "Voter Base Count"
+            },
+            {
+              "type": "UInt64",
+              "name": "Voter Base Count Changed Timestamp"
+            },
+            {
+              "type": "UInt32",
+              "name": "Foundation Last Voted Candidate Idx"
+            },
+            {
+              "type": "UInt64",
+              "name": "Foundation Last Voted Timestamp"
             },
             {
               "type": "Hash256",
-              "name": "Proposed Registry Hook Hash"
+              "name": "Elected Proposal Unique Id"
             },
             {
-              "type": "Hash256",
-              "name": "Proposed Heartbeat Hook Hash"
+              "type": "UInt64",
+              "name": "Proposal Elected Timestamp"
             },
             {
-              "type": "Hash256",
-              "name": "Proposed Reputation Hook Hash"
+              "type": "UInt8",
+              "name": "Updated Hook Count"
             }
           ]
         },
         {
-          "name": "Gov Mode Change Proposals",
+          "name": "Gov: Mode Change Proposals",
           "hookstate_key": [
             {
               "type": "VarString",
@@ -1701,7 +1573,135 @@
           ]
         },
         {
-          "name": "Gov Dud Host Removal Proposals",
+          "name": "Gov: New Hook Proposals",
+          "hookstate_key": [
+            {
+              "type": "VarString",
+              "name": "Key",
+              "pattern": "EVR",
+              "byte_length": 3,
+              "exclude": true
+            },
+            {
+              "type": "UInt8",
+              "name": "Index",
+              "pattern": "6",
+              "exclude": true
+            },
+            {
+              "type": "UInt8",
+              "name": "Mode",
+              "pattern": "1",
+              "exclude": false
+            },
+            {
+              "type": "VarString",
+              "name": "New Hookhash (partial)",
+              "byte_length": 27,
+              "binary": true
+            }
+          ],
+          "hookstate_data": [
+            {
+              "type": "AccountID",
+              "name": "Voter Host Account"
+            },
+            {
+              "type": "UInt32",
+              "name": "Candidate Idx"
+            },
+            {
+              "type": "VarString",
+              "name": "Short Name",
+              "byte_length": 20
+            },
+            {
+              "type": "UInt64",
+              "name": "Created Timestamp"
+            },
+            {
+              "type": "XFL",
+              "name": "Proposal Fee (paid by voter)"
+            },
+            {
+              "type": "UInt32",
+              "name": "Positive Vote Count"
+            },
+            {
+              "type": "UInt64",
+              "name": "Last Vote Timestamp"
+            },
+            {
+              "type": "UInt8",
+              "name": "Current Status"
+            },
+            {
+              "type": "UInt64",
+              "name": "Last Status Change Timestamp"
+            },
+            {
+              "type": "UInt8",
+              "name": "Foundation Vote Status"
+            },
+            {
+              "type": "UInt64",
+              "name": "Elect Purge Last Try Timestamp"
+            },
+            {
+              "type": "UInt8",
+              "name": "Acknowledged as Complete"
+            }
+          ]
+        },
+        {
+          "name": "Gov: New Hook Proposals (Hooks)",
+          "hookstate_key": [
+            {
+              "type": "VarString",
+              "name": "Key",
+              "pattern": "EVR",
+              "byte_length": 3,
+              "exclude": true
+            },
+            {
+              "type": "UInt8",
+              "name": "Index",
+              "pattern": "5",
+              "exclude": true
+            },
+            {
+              "type": "VarString",
+              "name": "padding",
+              "byte_length": 8,
+              "pattern": "00000000",
+              "exclude": true
+            },
+            {
+              "type": "AccountID",
+              "name": "Voter Host Account"
+            }
+          ],
+          "hookstate_data": [
+            {
+              "type": "Hash256",
+              "name": "Proposed Governor Hook Hash"
+            },
+            {
+              "type": "Hash256",
+              "name": "Proposed Registry Hook Hash"
+            },
+            {
+              "type": "Hash256",
+              "name": "Proposed Heartbeat Hook Hash"
+            },
+            {
+              "type": "Hash256",
+              "name": "Proposed Reputation Hook Hash"
+            }
+          ]
+        },
+        {
+          "name": "Gov: Dud Host Removal Proposals",
           "hookstate_key": [
             {
               "type": "VarString",
