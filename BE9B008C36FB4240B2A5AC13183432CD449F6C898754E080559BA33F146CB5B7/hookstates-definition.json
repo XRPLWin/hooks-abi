@@ -1492,7 +1492,88 @@
           ]
         },
         {
-          "name": "Candidate Owner",
+          "name": "Gov New Hook Proposals",
+          "hookstate_key": [
+            {
+              "type": "VarString",
+              "name": "Key",
+              "pattern": "EVR",
+              "byte_length": 3,
+              "exclude": true
+            },
+            {
+              "type": "UInt8",
+              "name": "Index",
+              "pattern": "6",
+              "exclude": true
+            },
+            {
+              "type": "UInt8",
+              "name": "Mode",
+              "pattern": "1",
+              "exclude": false
+            },
+            {
+              "type": "VarString",
+              "name": "New Hookhash (partial)",
+              "byte_length": 27,
+              "binary": true
+            }
+          ],
+          "hookstate_data": [
+            {
+              "type": "AccountID",
+              "name": "Voter Host Account"
+            },
+            {
+              "type": "UInt32",
+              "name": "Candidate Idx"
+            },
+            {
+              "type": "VarString",
+              "name": "Short Name",
+              "byte_length": 20
+            },
+            {
+              "type": "UInt64",
+              "name": "Created Timestamp"
+            },
+            {
+              "type": "XFL",
+              "name": "Proposal Fee (paid by voter)"
+            },
+            {
+              "type": "UInt32",
+              "name": "Positive Vote Count"
+            },
+            {
+              "type": "UInt64",
+              "name": "Last Vote Timestamp"
+            },
+            {
+              "type": "UInt8",
+              "name": "Current Status"
+            },
+            {
+              "type": "UInt64",
+              "name": "Last Status Change Timestamp"
+            },
+            {
+              "type": "UInt8",
+              "name": "Foundation Vote Status"
+            },
+            {
+              "type": "UInt64",
+              "name": "Elect Purge Last Try Timestamp"
+            },
+            {
+              "type": "UInt8",
+              "name": "Acknowledged as Complete"
+            }
+          ]
+        },
+        {
+          "name": "Gov New Hook Proposals (Hooks)",
           "hookstate_key": [
             {
               "type": "VarString",
@@ -1516,30 +1597,30 @@
             },
             {
               "type": "AccountID",
-              "name": "Account"
+              "name": "Voter Host Account"
             }
           ],
           "hookstate_data": [
             {
               "type": "Hash256",
-              "name": "Governor Hash"
+              "name": "Proposed Governor Hook Hash"
             },
             {
               "type": "Hash256",
-              "name": "Registry Hash"
+              "name": "Proposed Registry Hook Hash"
             },
             {
               "type": "Hash256",
-              "name": "Heartbeat Hash"
+              "name": "Proposed Heartbeat Hook Hash"
             },
             {
               "type": "Hash256",
-              "name": "Reputation Hash"
+              "name": "Proposed Reputation Hook Hash"
             }
           ]
         },
         {
-          "name": "Candidate ID",
+          "name": "Gov Mode Change Proposals",
           "hookstate_key": [
             {
               "type": "VarString",
@@ -1555,15 +1636,22 @@
               "exclude": true
             },
             {
+              "type": "UInt8",
+              "name": "Mode",
+              "pattern": "2",
+              "exclude": false
+            },
+            {
               "type": "VarString",
-              "name": "CandidateID",
-              "byte_length": 28
+              "name": "Namespace (partial)",
+              "byte_length": 27,
+              "binary": true
             }
           ],
           "hookstate_data": [
             {
               "type": "AccountID",
-              "name": "Owner Address"
+              "name": "Voter Host Account"
             },
             {
               "type": "UInt32",
@@ -1580,7 +1668,7 @@
             },
             {
               "type": "XFL",
-              "name": "Proposal Fee"
+              "name": "Proposal Fee (paid by voter)"
             },
             {
               "type": "UInt32",
@@ -1592,11 +1680,11 @@
             },
             {
               "type": "UInt8",
-              "name": "Status"
+              "name": "Current Status"
             },
             {
               "type": "UInt64",
-              "name": "Status Change Timestamp"
+              "name": "Last Status Change Timestamp"
             },
             {
               "type": "UInt8",
@@ -1608,7 +1696,91 @@
             },
             {
               "type": "UInt8",
-              "name": "Complete Acknowledged"
+              "name": "Acknowledged as Complete"
+            }
+          ]
+        },
+        {
+          "name": "Gov Dud Host Removal Proposals",
+          "hookstate_key": [
+            {
+              "type": "VarString",
+              "name": "Key",
+              "pattern": "EVR",
+              "byte_length": 3,
+              "exclude": true
+            },
+            {
+              "type": "UInt8",
+              "name": "Index",
+              "pattern": "6",
+              "exclude": true
+            },
+            {
+              "type": "UInt8",
+              "name": "Mode",
+              "pattern": "3",
+              "exclude": false
+            },
+            {
+              "type": "Null",
+              "byte_length": 7,
+              "exclude": true
+            },
+            {
+              "type": "AccountID",
+              "name": "Host Account"
+            }
+          ],
+          "hookstate_data": [
+            {
+              "type": "AccountID",
+              "name": "Voter Host Account"
+            },
+            {
+              "type": "UInt32",
+              "name": "Candidate Idx"
+            },
+            {
+              "type": "VarString",
+              "name": "Short Name",
+              "byte_length": 20
+            },
+            {
+              "type": "UInt64",
+              "name": "Created Timestamp"
+            },
+            {
+              "type": "XFL",
+              "name": "Proposal Fee (paid by voter)"
+            },
+            {
+              "type": "UInt32",
+              "name": "Positive Vote Count"
+            },
+            {
+              "type": "UInt64",
+              "name": "Last Vote Timestamp"
+            },
+            {
+              "type": "UInt8",
+              "name": "Current Status"
+            },
+            {
+              "type": "UInt64",
+              "name": "Last Status Change Timestamp"
+            },
+            {
+              "type": "UInt8",
+              "name": "Foundation Vote Status"
+            },
+            {
+              "type": "UInt64",
+              "name": "Elect Purge Last Try Timestamp"
+            },
+            {
+              "type": "UInt8",
+              "name": "Acknowledged as Complete"
             }
           ]
         }
