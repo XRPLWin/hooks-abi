@@ -1523,7 +1523,7 @@
           "hookstate_data": [
             {
               "type": "AccountID",
-              "name": "Voter Host Account"
+              "name": "Proposer Host Account"
             },
             {
               "type": "UInt32",
@@ -1540,7 +1540,7 @@
             },
             {
               "type": "XFL",
-              "name": "Proposal Fee (paid by voter)"
+              "name": "Proposal Fee (paid by proposer)"
             },
             {
               "type": "UInt32",
@@ -1604,7 +1604,7 @@
           "hookstate_data": [
             {
               "type": "AccountID",
-              "name": "Voter Host Account"
+              "name": "Proposer Host Account"
             },
             {
               "type": "UInt32",
@@ -1621,7 +1621,7 @@
             },
             {
               "type": "XFL",
-              "name": "Proposal Fee (paid by voter)"
+              "name": "Proposal Fee (paid by proposer)"
             },
             {
               "type": "UInt32",
@@ -1729,13 +1729,14 @@
             },
             {
               "type": "AccountID",
-              "name": "Host Account"
+              "name": "Dud Host",
+              "desc": "Host Account to be Voted out and removed from Evernode Ecosystem."
             }
           ],
           "hookstate_data": [
             {
               "type": "AccountID",
-              "name": "Voter Host Account"
+              "name": "Proposer Host Account"
             },
             {
               "type": "UInt32",
@@ -1752,7 +1753,7 @@
             },
             {
               "type": "XFL",
-              "name": "Proposal Fee (paid by voter)"
+              "name": "Proposal Fee (paid by proposer)"
             },
             {
               "type": "UInt32",
