@@ -113,7 +113,8 @@
           "hookstate_key": [
             {
               "type": "Null",
-              "byte_length": 12
+              "byte_length": 12,
+              "exclude": true
             },
             {
               "type": "AccountID",
