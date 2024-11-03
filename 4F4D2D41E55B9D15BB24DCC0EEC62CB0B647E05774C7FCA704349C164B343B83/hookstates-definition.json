@@ -1,0 +1,296 @@
+{
+  "name": "vpra-raceV2",
+  "hook_account": "rUYiTLYpN8M4xLhtRD9HQZFwqZ4WaKJc89",
+  "hook_namespace_id": "B14F0BA31B19C88A2493FC7900FEA50507020E05C5612AAB270E422F0CDF8DCE",
+  "hook_definition": {
+    "name": "VPRA Race V2",
+    "description": "",
+    "account": "rUYiTLYpN8M4xLhtRD9HQZFwqZ4WaKJc89",
+    "namespace_id": "B14F0BA31B19C88A2493FC7900FEA50507020E05C5612AAB270E422F0CDF8DCE",
+    "hook_hash": "4F4D2D41E55B9D15BB24DCC0EEC62CB0B647E05774C7FCA704349C164B343B83",
+    "version": [],
+    "hook_states": {
+      "fields": [
+        {
+          "name": "Pet",
+          "hookstate_key": [
+            {
+              "type": "Hash256",
+              "name": "Race Hash"
+            }
+          ],
+          "hookstate_data": [
+            {
+              "type": "UInt64",
+              "name": "Race ID"
+            },
+            {
+              "type": "VarString",
+              "name": "Race Name",
+              "byte_length": 32,
+              "length_prefix": true
+            },
+            {
+              "type": "UInt8",
+              "name": "Status"
+            },
+            {
+              "type": "UInt8",
+              "name": "Weight Class"
+            },
+            {
+              "type": "UInt8",
+              "name": "Weather"
+            },
+            {
+              "type": "UInt8",
+              "name": "Soil"
+            },
+            {
+              "type": "UInt8",
+              "name": "Stalls"
+            },
+            {
+              "type": "UInt32",
+              "name": "Length"
+            },
+            {
+              "type": "UInt32",
+              "name": "Start"
+            },
+            {
+              "type": "XFL",
+              "name": "Entry Fee"
+            },
+            {
+              "type": "XFL",
+              "name": "Pool Fee"
+            },
+            {
+              "type": "XFL",
+              "name": "Track Fee"
+            }
+          ],
+          "foreign_state": {
+            "account": "rUYiTLYpN8M4xLhtRD9HQZFwqZ4WaKJc89",
+            "namespace_id": ""
+          }
+        },
+        {
+          "name": "Pet participation status",
+          "hookstate_key": [
+            {
+              "type": "Hash256",
+              "name": "Pet Hash"
+            }
+          ],
+          "hookstate_data": [
+            {
+              "type": "UInt8",
+              "name": "Participated"
+            }
+          ],
+          "foreign_state": {
+            "account": "rUYiTLYpN8M4xLhtRD9HQZFwqZ4WaKJc89",
+            "namespace_id": ""
+          }
+        },
+        {
+          "name": "Race Participation status",
+          "hookstate_key": [
+            {
+              "type": "Null",
+              "byte_length": 12
+            },
+            {
+              "type": "AccountID",
+              "name": "Hook Account"
+            }
+          ],
+          "hookstate_data": [
+            {
+              "type": "UInt8",
+              "name": "Participated"
+            }
+          ],
+          "foreign_state": {
+            "account": "rUYiTLYpN8M4xLhtRD9HQZFwqZ4WaKJc89",
+            "namespace_id": ""
+          }
+        },
+        {
+          "name": "Prize Pool",
+          "hookstate_key": [
+            {
+              "type": "Hash256",
+              "name": "Race Namespace"
+            }
+          ],
+          "hookstate_data": [
+            {
+              "type": "XFL",
+              "name": "Prize Pool"
+            }
+          ],
+          "foreign_state": {
+            "account": "rUYiTLYpN8M4xLhtRD9HQZFwqZ4WaKJc89",
+            "namespace_id": ""
+          }
+        }
+      ]
+    },
+    "github_url": "https://github.com/Transia-RnD/vpra-hooks/blob/d5d083d6f12ee0d67198b101a4ed0fb59ad7a1b7/contracts/pet_raceV2.c",
+    "hook_index": 5,
+    "hook_parameters": {
+      "fields": []
+    },
+    "txn_parameters": {
+      "fields": [
+        {
+          "transaction_types": [
+            "Invoke",
+            "Payment"
+          ],
+          "otxnparam_key": [
+            {
+              "type": "VarString",
+              "name": "Race Namespace",
+              "pattern": "RCN",
+              "byte_length": 3
+            }
+          ],
+          "otxnparam_data": [
+            {
+              "type": "Hash256",
+              "name": "Race Namespace"
+            }
+          ]
+        },
+        {
+          "transaction_types": [
+            "Invoke",
+            "Payment"
+          ],
+          "otxnparam_key": [
+            {
+              "type": "VarString",
+              "name": "Race Hash",
+              "pattern": "RH",
+              "byte_length": 2
+            }
+          ],
+          "otxnparam_data": [
+            {
+              "type": "Hash256",
+              "name": "Race Hash"
+            }
+          ]
+        },
+        {
+          "transaction_types": [
+            "Invoke",
+            "Payment"
+          ],
+          "otxnparam_key": [
+            {
+              "type": "VarString",
+              "name": "Race Model",
+              "pattern": "RM",
+              "byte_length": 2
+            }
+          ],
+          "otxnparam_data": [
+            {
+              "type": "UInt64",
+              "name": "Race ID"
+            },
+            {
+              "type": "VarString",
+              "name": "Race Name",
+              "byte_length": 32,
+              "length_prefix": true
+            },
+            {
+              "type": "UInt8",
+              "name": "Status"
+            },
+            {
+              "type": "UInt8",
+              "name": "Weight Class"
+            },
+            {
+              "type": "UInt8",
+              "name": "Weather"
+            },
+            {
+              "type": "UInt8",
+              "name": "Soil"
+            },
+            {
+              "type": "UInt8",
+              "name": "Stalls"
+            },
+            {
+              "type": "UInt32",
+              "name": "Length"
+            },
+            {
+              "type": "UInt32",
+              "name": "Start"
+            },
+            {
+              "type": "XFL",
+              "name": "Entry Fee"
+            },
+            {
+              "type": "XFL",
+              "name": "Pool Fee"
+            },
+            {
+              "type": "XFL",
+              "name": "Track Fee"
+            }
+          ]
+        },
+        {
+          "transaction_types": [
+            "Payment"
+          ],
+          "otxnparam_key": [
+            {
+              "type": "VarString",
+              "name": "Pet Hash",
+              "pattern": "PH",
+              "byte_length": 2
+            }
+          ],
+          "otxnparam_data": [
+            {
+              "type": "Hash256",
+              "name": "Pet Hash"
+            }
+          ]
+        },
+        {
+          "transaction_types": [
+            "Payment"
+          ],
+          "otxnparam_key": [
+            {
+              "type": "VarString",
+              "name": "Race Pool Namespace",
+              "pattern": "RPN",
+              "byte_length": 3
+            }
+          ],
+          "otxnparam_data": [
+            {
+              "type": "Hash256",
+              "name": "Pet Hash"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

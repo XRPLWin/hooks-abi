@@ -1,0 +1,187 @@
+{
+  "name": "vpra-updateV2",
+  "hook_account": "rUYiTLYpN8M4xLhtRD9HQZFwqZ4WaKJc89",
+  "hook_namespace_id": "3BE1D422A46085E17F4A19D3ED707C866927A6D354A562C45A78F1F03D7C4118",
+  "hook_definition": {
+    "name": "VPRA Update V2",
+    "description": "",
+    "account": "rUYiTLYpN8M4xLhtRD9HQZFwqZ4WaKJc89",
+    "namespace_id": "3BE1D422A46085E17F4A19D3ED707C866927A6D354A562C45A78F1F03D7C4118",
+    "hook_hash": "DCC25F1DCE8916C25825082915A9B22E0C915B1CFB752DF77516076DA238B7A0",
+    "version": [],
+    "hook_states": {
+      "fields": [
+        {
+          "name": "Pet",
+          "hookstate_key": [
+            {
+              "type": "Hash256",
+              "name": "Pet Digest"
+            }
+          ],
+          "hookstate_data": [
+            {
+              "type": "VarString",
+              "name": "Name",
+              "byte_length": 32,
+              "length_prefix": true
+            },
+            {
+              "type": "UInt64",
+              "name": "ID"
+            },
+            {
+              "type": "UInt8",
+              "name": "Gender"
+            },
+            {
+              "type": "UInt8",
+              "name": "Age"
+            },
+            {
+              "type": "UInt8",
+              "name": "Breed"
+            },
+            {
+              "type": "UInt8",
+              "name": "Size"
+            },
+            {
+              "type": "UInt8",
+              "name": "Body"
+            },
+            {
+              "type": "UInt8",
+              "name": "Hooves"
+            },
+            {
+              "type": "UInt8",
+              "name": "Speed"
+            },
+            {
+              "type": "UInt8",
+              "name": "Stamina"
+            },
+            {
+              "type": "UInt8",
+              "name": "Temperament"
+            },
+            {
+              "type": "UInt8",
+              "name": "Training"
+            },
+            {
+              "type": "UInt8",
+              "name": "Health"
+            },
+            {
+              "type": "UInt8",
+              "name": "Lifespan"
+            },
+            {
+              "type": "UInt8",
+              "name": "Affinity"
+            },
+            {
+              "type": "UInt64",
+              "name": "Morale"
+            },
+            {
+              "type": "UInt8",
+              "name": "IsBreedable"
+            },
+            {
+              "type": "XFL",
+              "name": "BreedPrice"
+            },
+            {
+              "type": "Hash256",
+              "name": "TokenID"
+            },
+            {
+              "type": "UInt64",
+              "name": "Wins"
+            },
+            {
+              "type": "XFL",
+              "name": "Total"
+            }
+          ]
+        }
+      ]
+    },
+    "github_url": "https://github.com/Transia-RnD/vpra-hooks/blob/d5d083d6f12ee0d67198b101a4ed0fb59ad7a1b7/contracts/pet_updateV2.c",
+    "hook_index": 2,
+    "hook_parameters": {
+      "fields": []
+    },
+    "txn_parameters": {
+      "fields": [
+        {
+          "name": "Pet",
+          "transaction_types": [
+            "Invoke"
+          ],
+          "otxnparam_key": [
+            {
+              "type": "VarString",
+              "name": "Pet",
+              "pattern": "P",
+              "byte_length": 1
+            }
+          ],
+          "otxnparam_data": [
+            {
+              "type": "Hash256",
+              "name": "Pet Hash"
+            }
+          ]
+        },
+        {
+          "name": "Breed Price",
+          "transaction_types": [
+            "Invoke"
+          ],
+          "otxnparam_key": [
+            {
+              "type": "VarString",
+              "name": "Breed Price",
+              "pattern": "BP",
+              "byte_length": 2,
+              "exclude": true
+            }
+          ],
+          "otxnparam_data": [
+            {
+              "type": "XFL",
+              "name": "Breed Price"
+            }
+          ]
+        },
+        {
+          "name": "Pet Name",
+          "transaction_types": [
+            "Invoke"
+          ],
+          "otxnparam_key": [
+            {
+              "type": "VarString",
+              "name": "Pet Name",
+              "pattern": "PN",
+              "byte_length": 2,
+              "exclude": true
+            }
+          ],
+          "otxnparam_data": [
+            {
+              "type": "VarString",
+              "name": "Pet Name",
+              "byte_length": 32,
+              "length_prefix": true
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
