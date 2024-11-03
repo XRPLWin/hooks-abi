@@ -1,0 +1,253 @@
+{
+  "name": "vpra-mintv2",
+  "hook_account": "rUYiTLYpN8M4xLhtRD9HQZFwqZ4WaKJc89",
+  "hook_namespace_id": "3BE1D422A46085E17F4A19D3ED707C866927A6D354A562C45A78F1F03D7C4118",
+  "hook_definition": {
+    "name": "VPRA Mint V2",
+    "description": "",
+    "account": "rUYiTLYpN8M4xLhtRD9HQZFwqZ4WaKJc89",
+    "namespace_id": "3BE1D422A46085E17F4A19D3ED707C866927A6D354A562C45A78F1F03D7C4118",
+    "hook_hash": "6376E31EA396A96B35BB65689356050FE0C2EB3C0E0EC69B2045222BA8EB31CE",
+    "version": [],
+    "hook_states": {
+      "fields": [
+        {
+          "name": "Pet",
+          "hookstate_key": [
+            {
+              "type": "Hash256",
+              "name": "Pet ID"
+            }
+          ],
+          "hookstate_data": [
+            {
+              "type": "VarString",
+              "name": "Name",
+              "byte_length": 32,
+              "length_prefix": true
+            },
+            {
+              "type": "UInt64",
+              "name": "ID"
+            },
+            {
+              "type": "UInt8",
+              "name": "Gender"
+            },
+            {
+              "type": "UInt8",
+              "name": "Age"
+            },
+            {
+              "type": "UInt8",
+              "name": "Breed"
+            },
+            {
+              "type": "UInt8",
+              "name": "Size"
+            },
+            {
+              "type": "UInt8",
+              "name": "Body"
+            },
+            {
+              "type": "UInt8",
+              "name": "Hooves"
+            },
+            {
+              "type": "UInt8",
+              "name": "Speed"
+            },
+            {
+              "type": "UInt8",
+              "name": "Stamina"
+            },
+            {
+              "type": "UInt8",
+              "name": "Temperament"
+            },
+            {
+              "type": "UInt8",
+              "name": "Training"
+            },
+            {
+              "type": "UInt8",
+              "name": "Health"
+            },
+            {
+              "type": "UInt8",
+              "name": "Lifespan"
+            },
+            {
+              "type": "UInt8",
+              "name": "Affinity"
+            },
+            {
+              "type": "UInt64",
+              "name": "Morale"
+            },
+            {
+              "type": "UInt8",
+              "name": "IsBreedable"
+            },
+            {
+              "type": "XFL",
+              "name": "BreedPrice"
+            },
+            {
+              "type": "Hash256",
+              "name": "TokenID"
+            },
+            {
+              "type": "UInt64",
+              "name": "Wins"
+            },
+            {
+              "type": "XFL",
+              "name": "Total"
+            }
+          ]
+        },
+        {
+          "name": "Pet Count",
+          "hookstate_key": [
+            {
+              "type": "Null",
+              "byte_length": 12
+            },
+            {
+              "type": "AccountID",
+              "name": "hook account"
+            }
+          ],
+          "hookstate_data": [
+            {
+              "type": "UInt64",
+              "name": "Pet Count"
+            }
+          ]
+        }
+      ]
+    },
+    "github_url": "https://github.com/Transia-RnD/vpra-hooks/blob/d5d083d6f12ee0d67198b101a4ed0fb59ad7a1b7/contracts/pet_mintv2.c",
+    "hook_index": 1,
+    "hook_parameters": {
+      "fields": [
+        {
+          "hookparam_key": [
+            {
+              "type": "VarString",
+              "name": "Mint Price",
+              "pattern": "MP",
+              "byte_length": 2
+            }
+          ],
+          "hookparam_data": [
+            {
+              "type": "XFL",
+              "name": "Price (XAH)"
+            }
+          ]
+        }
+      ]
+    },
+    "txn_parameters": {
+      "fields": [
+        {
+          "transaction_types": [
+            "Payment"
+          ],
+          "otxnparam_key": [
+            {
+              "type": "VarString",
+              "name": "Pet Name",
+              "pattern": "PN",
+              "byte_length": 2
+            }
+          ],
+          "otxnparam_data": [
+            {
+              "type": "VarString",
+              "name": "Name",
+              "length_prefix": true
+            }
+          ]
+        },
+        {
+          "transaction_types": [
+            "Invoke"
+          ],
+          "otxnparam_key": [
+            {
+              "type": "VarString",
+              "name": "Key",
+              "pattern": "EVR",
+              "byte_length": 3,
+              "exclude": true
+            },
+            {
+              "type": "UInt8",
+              "name": "Prefix",
+              "pattern": "1",
+              "exclude": true
+            },
+            {
+              "type": "Null",
+              "byte_length": 27
+            },
+            {
+              "type": "UInt8",
+              "name": "Index",
+              "pattern": "2",
+              "exclude": true
+            }
+          ],
+          "otxnparam_data": [
+            {
+              "type": "VarString",
+              "name": "Event Type: Host Send Reputation",
+              "pattern": "evnHostSendReputation",
+              "byte_length": 21
+            }
+          ]
+        },
+        {
+          "transaction_types": [
+            "Invoke"
+          ],
+          "otxnparam_key": [
+            {
+              "type": "VarString",
+              "name": "Key",
+              "pattern": "EVR",
+              "byte_length": 3,
+              "exclude": true
+            },
+            {
+              "type": "UInt8",
+              "name": "Prefix",
+              "pattern": "1",
+              "exclude": true
+            },
+            {
+              "type": "Null",
+              "byte_length": 27
+            },
+            {
+              "type": "UInt8",
+              "name": "Index",
+              "pattern": "3",
+              "exclude": true
+            }
+          ],
+          "otxnparam_data": [
+            {
+              "type": "AccountID",
+              "name": "Event Data: Reputation Account"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
