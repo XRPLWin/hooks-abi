@@ -118,7 +118,7 @@
             },
             {
               "type": "AccountID",
-              "name": "hook account"
+              "name": "Hook Account"
             }
           ],
           "hookstate_data": [
