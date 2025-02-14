@@ -1,0 +1,42 @@
+{
+  "name": "xahau-docproof",
+  "hook_account": "",
+  "hook_namespace_id": "",
+  "hook_definition": {
+    "name": "xahau-docproof",
+    "description": "xahau-docproof",
+    "hook_hash": "",
+    "namespace_id": "",
+    "version": [],
+    "hook_states": {
+      "fields": [
+        {
+          "name": "Signatures",
+          "hookstate_key": [
+            {
+              "type": "Hash256",
+              "name": "DPSignature Hash",
+              "exclude": true
+            }
+          ],
+          "hookstate_data": [
+            {
+              "type": "AccountID",
+              "name": "Signer"
+            },
+            {
+              "type": "Hash256",
+              "name": "Document Hash",
+              "exclude": false
+            },
+            {
+              "type": "Hash256",
+              "name": "Document ID",
+              "exclude": false
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
