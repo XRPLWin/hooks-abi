@@ -10,6 +10,58 @@
     "version": [],
     "hook_states": {
       "fields": [
+	      {
+          "name": "Fee configuration",
+          "hookstate_key": [
+            {
+              "type": "Null",
+              "name": "Null",
+              "binary": true,
+              "byte_length": 29,
+              "exclude": true
+            },
+            {
+              "type": "VarString",
+              "name": "Key",
+              "binary": false,
+              "pattern":"FEE",
+              "byte_length": 3,
+              "exclude": false
+            }
+          ],
+          "hookstate_data": [
+            {
+              "type": "XFL",
+              "name": "Value (XAH)"
+            }
+          ]
+        },
+        {
+          "name": "Reserve configuration",
+          "hookstate_key": [
+            {
+              "type": "Null",
+              "name": "Null",
+              "binary": true,
+              "byte_length": 25,
+              "exclude": true
+            },
+            {
+              "type": "VarString",
+              "name": "Key",
+              "binary": false,
+              "pattern":"RESERVE",
+              "byte_length": 7,
+              "exclude": false
+            }
+          ],
+          "hookstate_data": [
+            {
+              "type": "XFL",
+              "name": "Value (XAH)"
+            }
+          ]
+        },
         {
           "name": "Signatures",
           "hookstate_key": [
