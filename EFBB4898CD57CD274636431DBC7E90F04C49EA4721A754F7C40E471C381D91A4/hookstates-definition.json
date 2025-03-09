@@ -93,7 +93,7 @@
           ]
         },
         {
-          "name": "Ordered HostID",
+          "name": "Reputation Account to Ordered HostID",
           "hookstate_key": [
             {
               "type": "Null",
@@ -102,7 +102,7 @@
             },
             {
               "type": "UInt64",
-              "name": "Next Moment"
+              "name": "Moment"
             },
             {
               "type": "AccountID",
@@ -117,7 +117,7 @@
           ]
         },
         {
-          "name": "Reputation Account",
+          "name": "Ordered HostID to Reputation Account",
           "hookstate_key": [
             {
               "type": "Null",
