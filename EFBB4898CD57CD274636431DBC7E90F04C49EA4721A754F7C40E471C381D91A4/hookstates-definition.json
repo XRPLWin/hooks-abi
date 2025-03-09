@@ -299,7 +299,7 @@
           "otxnparam_data": [
             {
               "type": "AccountID",
-              "name": "Sending reputation scores for Host"
+              "name": "Host"
             }
           ]
         }
