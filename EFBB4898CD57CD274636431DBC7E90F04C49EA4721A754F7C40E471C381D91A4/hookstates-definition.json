@@ -44,6 +44,42 @@
               "name": "Governance Account"
             }
           ]
+        },
+        {
+          "name": "Issuer Address",
+          "hookparam_key": [
+            {
+              "type": "VarString",
+              "name": "Key",
+              "pattern": "EVR",
+              "byte_length": 3,
+              "exclude": true
+            },
+            {
+              "type": "UInt8",
+              "name": "Prefix",
+              "pattern": "1",
+              "exclude": true
+            },
+            {
+              "type": "Null",
+              "byte_length": 27,
+              "exclude": true
+            },
+            {
+              "type": "UInt8",
+              "name": "Index",
+              "pattern": "2",
+              "exclude": true
+            }
+          ],
+          "hookparam_data": [
+            {
+              "type": "VarString",
+              "name": "Value",
+              "exclude": false
+            }
+          ]
         }
       ]
     },
