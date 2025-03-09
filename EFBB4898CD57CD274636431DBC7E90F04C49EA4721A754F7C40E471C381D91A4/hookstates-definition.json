@@ -44,42 +44,6 @@
               "name": "Governance Account"
             }
           ]
-        },
-        {
-          "name": "Issuer Address",
-          "hookparam_key": [
-            {
-              "type": "VarString",
-              "name": "Key",
-              "pattern": "EVR",
-              "byte_length": 3,
-              "exclude": true
-            },
-            {
-              "type": "UInt8",
-              "name": "Prefix",
-              "pattern": "1",
-              "exclude": true
-            },
-            {
-              "type": "Null",
-              "byte_length": 27,
-              "exclude": true
-            },
-            {
-              "type": "UInt8",
-              "name": "Index",
-              "pattern": "2",
-              "exclude": true
-            }
-          ],
-          "hookparam_data": [
-            {
-              "type": "VarString",
-              "name": "Value",
-              "exclude": false
-            }
-          ]
         }
       ]
     },
@@ -192,31 +156,31 @@
           "hookstate_data": [
             {
               "type": "UInt64",
-              "name": "Tracking Moment"
+              "name": "Moment"
             },
             {
               "type": "UInt64",
-              "name": "Score Numerator"
+              "name": "scoreNumerator"
             },
             {
               "type": "UInt64",
-              "name": "Score Denominator"
+              "name": "scoreDenominator"
             },
             {
               "type": "UInt64",
-              "name": "Score"
+              "name": "score"
             },
             {
               "type": "UInt64",
-              "name": "Update Moment"
+              "name": "lastResetMoment"
             },
             {
               "type": "UInt64",
-              "name": "Score Update Moment"
+              "name": "lastScoredMoment"
             },
             {
               "type": "UInt64",
-              "name": "Universe (Cluster) Size"
+              "name": "lastUniverseSize"
             }
           ]
         }
@@ -243,11 +207,8 @@
               "exclude": true
             },
             {
-              "type": "VarString",
-              "name": "",
+              "type": "Null",
               "byte_length": 27,
-              "pattern": null,
-              "binary": true,
               "exclude": true
             },
             {
@@ -285,11 +246,8 @@
               "exclude": true
             },
             {
-              "type": "VarString",
-              "name": "",
+              "type": "Null",
               "byte_length": 27,
-              "pattern": null,
-              "binary": true,
               "exclude": true
             },
             {
@@ -302,9 +260,46 @@
           "otxnparam_data": [
             {
               "type": "VarString",
-              "name": "Event Type: Host Send Reputation",
+              "name": "Event Type",
               "pattern": "evnHostSendReputation",
               "byte_length": 21
+            }
+          ]
+        },
+        {
+          "transaction_types": [
+            "Invoke"
+          ],
+          "otxnparam_key": [
+            {
+              "type": "VarString",
+              "name": "Key",
+              "pattern": "EVR",
+              "byte_length": 3,
+              "exclude": true
+            },
+            {
+              "type": "UInt8",
+              "name": "Prefix",
+              "pattern": "1",
+              "exclude": true
+            },
+            {
+              "type": "Null",
+              "byte_length": 27,
+              "exclude": true
+            },
+            {
+              "type": "UInt8",
+              "name": "Index",
+              "pattern": "3",
+              "exclude": true
+            }
+          ],
+          "otxnparam_data": [
+            {
+              "type": "AccountID",
+              "name": "Sending reputation scores for Host"
             }
           ]
         }
