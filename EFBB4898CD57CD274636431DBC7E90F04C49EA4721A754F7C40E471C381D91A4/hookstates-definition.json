@@ -50,7 +50,7 @@
     "hook_states": {
       "fields": [
         {
-          "name": "Cleanup Moment (OK)",
+          "name": "Cleanup Moment",
           "hookstate_key": [
             {
               "type": "Null",
