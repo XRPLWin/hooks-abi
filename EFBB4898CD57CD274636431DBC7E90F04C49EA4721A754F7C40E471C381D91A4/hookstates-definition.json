@@ -156,7 +156,7 @@
           "hookstate_data": [
             {
               "type": "UInt64",
-              "name": "Next Moment"
+              "name": "lastRegisteredMoment"
             },
             {
               "type": "UInt64",
