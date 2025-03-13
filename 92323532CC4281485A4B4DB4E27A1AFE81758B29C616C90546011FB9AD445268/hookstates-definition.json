@@ -1,0 +1,122 @@
+{
+  "name": "ranking-hook",
+  "hook_account": "",
+  "hook_namespace_id": "",
+  "hook_definition": {
+    "name": "Ranking Hook",
+    "description": "Ranking Hook",
+    "hook_hash": "",
+    "namespace_id": "",
+    "version": [],
+    "hook_states": {
+      "fields": [
+        {
+          "name": "Account Rankings",
+          "hookstate_key": [
+            {
+              "type": "Null",
+              "byte_length": 31,
+              "exclude": true
+            },
+            {
+              "type": "UInt8",
+              "name": "Rank"
+            }
+          ],
+          "hookstate_data": [
+            {
+              "type": "AccountID",
+              "name": "Account"
+            }
+          ]
+        },
+        {
+          "name": "Account Scores",
+          "hookstate_key": [
+            {
+              "type": "Null",
+              "byte_length": 31,
+              "exclude": true
+            },
+            {
+              "type": "UInt8",
+              "name": "Rank"
+            }
+          ],
+          "hookstate_data": [
+            {
+              "type": "UInt64",
+              "name": "Score"
+            }
+          ]
+        },
+        {
+          "name": "Vault",
+          "hookstate_key": [
+            {
+              "type": "Null",
+              "byte_length": 27,
+              "exclude": true
+            },
+            {
+              "type": "VarString",
+              "name": "Vault",
+              "pattern": "VAULT",
+              "byte_length": 5
+            }
+          ],
+          "hookstate_data": [
+            {
+              "type": "UInt64",
+              "name": "Amount"
+            }
+          ]
+        }
+      ]
+    },
+    "txn_parameters": {
+      "fields": [
+        {
+          "transaction_types": [
+            "Invoke"
+          ],
+          "otxnparam_key": [
+            {
+              "type": "VarString",
+              "name": "Key",
+              "pattern": "SCORE",
+              "byte_length": 5,
+              "exclude": true
+            }
+          ],
+          "otxnparam_data": [
+            {
+              "type": "UInt64",
+              "name": "Score"
+            }
+          ]
+        },
+        {
+          "transaction_types": [
+            "Invoke"
+          ],
+          "otxnparam_key": [
+            {
+              "type": "VarString",
+              "name": "Key",
+              "pattern": "ADDRESS",
+              "byte_length": 7,
+              "exclude": true
+            }
+          ],
+          "otxnparam_data": [
+            {
+              "type": "AccountID",
+              "name": "Account"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
