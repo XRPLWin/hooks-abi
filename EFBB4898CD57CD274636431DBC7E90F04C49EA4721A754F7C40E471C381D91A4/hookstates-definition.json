@@ -315,8 +315,16 @@
             {
               "type": "Array",
               "name": "Scores",
-              "byte_length": 64,
+              "byte_length": 66,
               "array": [
+                {
+                  "type": "UInt8",
+                  "name": "Version"
+                },
+                {
+                  "type": "UInt8",
+                  "name": "Score"
+                },
                 {
                   "type": "UInt8",
                   "name": "Score"
