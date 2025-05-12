@@ -124,7 +124,7 @@
           "hookstate_data": [
             {
               "type": "UInt8",
-              "name": "SeatID"
+              "name": "Seat Vote Count"
             }
           ]
         },
