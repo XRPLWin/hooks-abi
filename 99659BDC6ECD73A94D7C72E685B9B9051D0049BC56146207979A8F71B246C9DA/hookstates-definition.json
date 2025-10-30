@@ -1,0 +1,62 @@
+{
+  "name": "xahau-2nd-birthday-hook",
+  "hook_account": "",
+  "hook_namespace_id": "",
+  "hook_definition": {
+    "name": "Xahau 2nd Birthday Hook",
+    "description": "Xahau 2nd Birthday Hook",
+    "hook_hash": "",
+    "namespace_id": "",
+    "version": [],
+    "hook_states": {
+      "fields": [
+        {
+          "name": "Birthday Messages",
+          "hookstate_key": [
+            {
+              "type": "VarString",
+              "name": "Key",
+              "pattern": "BIRTHDAY_MSG",
+              "byte_length": 12
+            },
+            {
+              "type": "Null",
+              "byte_length": 20,
+              "exclude": true
+            }
+          ],
+          "hookstate_data": [
+            {
+              "type": "UndeterminedVarString",
+              "name": "Message"
+            }
+          ]
+        }
+      ]
+    },
+    "txn_parameters": {
+      "fields": [
+        {
+          "transaction_types": [
+            "Invoke"
+          ],
+          "otxnparam_key": [
+            {
+              "type": "VarString",
+              "name": "Key",
+              "pattern": "MSG",
+              "byte_length": 3,
+              "exclude": true
+            }
+          ],
+          "otxnparam_data": [
+            {
+              "type": "UndeterminedVarString",
+              "name": "Message"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
