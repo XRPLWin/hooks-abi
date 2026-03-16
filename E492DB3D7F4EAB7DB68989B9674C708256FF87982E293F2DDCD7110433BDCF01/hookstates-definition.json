@@ -32,21 +32,22 @@
           ]
         },
         {
-          "name": "[SM] Member Bitfield",
+          "name": "[SM] Member Count",
           "hookstate_key": [
-            { "type": "VarString", "name": "Identifier", "byte_length": 1, "pattern": "S", "binary": false, "exclude": false },
-            { "type": "VarString", "name": "Sub-identifier", "byte_length": 1, "pattern": "M", "binary": false, "exclude": false },
+            { "type": "VarString", "name": "Identifier", "byte_length": 2, "pattern": "SM", "binary": false, "exclude": false },
             { "type": "Null", "byte_length": 30, "exclude": true }
           ],
           "hookstate_data": [
-            { "type": "Hash256", "name": "Bitfield" }
+            { "type": "UInt64", "name": "Seats 0-63 count" },
+            { "type": "UInt64", "name": "Seats 64-127 count" },
+            { "type": "UInt64", "name": "Seats 128-191 count" },
+            { "type": "UInt64", "name": "Seats 192-255 count" }
           ]
         },
         {
           "name": "[SL] Cleanup Low Watermark",
           "hookstate_key": [
-            { "type": "VarString", "name": "Identifier", "byte_length": 1, "pattern": "S", "binary": false, "exclude": false },
-            { "type": "VarString", "name": "Sub-identifier", "byte_length": 1, "pattern": "L", "binary": false, "exclude": false },
+            { "type": "VarString", "name": "Identifier", "byte_length": 2, "pattern": "SL", "binary": false, "exclude": false },
             { "type": "Null", "byte_length": 30, "exclude": true }
           ],
           "hookstate_data": [
@@ -56,8 +57,7 @@
         {
           "name": "[SH] Cleanup High Watermark",
           "hookstate_key": [
-            { "type": "VarString", "name": "Identifier", "byte_length": 1, "pattern": "S", "binary": false, "exclude": false },
-            { "type": "VarString", "name": "Sub-identifier", "byte_length": 1, "pattern": "H", "binary": false, "exclude": false },
+            { "type": "VarString", "name": "Identifier", "byte_length": 2, "pattern": "SH", "binary": false, "exclude": false },
             { "type": "Null", "byte_length": 30, "exclude": true }
           ],
           "hookstate_data": [
