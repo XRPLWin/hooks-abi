@@ -4,7 +4,7 @@
   "hook_namespace_id": "97380187A878903FFE722B7BFD8D8BA92457EF77DE0216CFE9261C72C2B87397",
   "hook_definition": {
     "name": "Supports tipping on social media platforms (especially twitter/X, netid=1)",
-    "description": "Tipbot Tip Oracle Governance Game Hook",
+    "description": "Tipbot Tip Oracle Governance Game Hook.",
     "hook_hash": "E492DB3D7F4EAB7DB68989B9674C708256FF87982E293F2DDCD7110433BDCF01",
     "namespace_id": "97380187A878903FFE722B7BFD8D8BA92457EF77DE0216CFE9261C72C2B87397",
     "version": [],
