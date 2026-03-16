@@ -1,0 +1,154 @@
+{
+  "name": "tipbot-tip",
+  "hook_account": null,
+  "hook_namespace_id": "97380187A878903FFE722B7BFD8D8BA92457EF77DE0216CFE9261C72C2B87397",
+  "hook_definition": {
+    "name": "Supports tipping on social media platforms (especially twitter/X, netid=1)",
+    "description": "Tipbot Tip Oracle Governance Game Hook",
+    "hook_hash": "E492DB3D7F4EAB7DB68989B9674C708256FF87982E293F2DDCD7110433BDCF01",
+    "namespace_id": "97380187A878903FFE722B7BFD8D8BA92457EF77DE0216CFE9261C72C2B87397",
+    "version": [],
+    "hook_states": {
+      "fields": [
+        {
+          "name": "[P] Governance game Members",
+          "hookstate_key": [
+            { "type": "Null", "byte_length": 30, "exclude": true },
+            { "type": "VarString", "name": "Identifier", "byte_length": 1, "pattern": "P", "binary": false, "exclude": false },
+            { "type": "UInt8", "name": "Seat ID" }
+          ],
+          "hookstate_data": [
+            { "type": "AccountID", "name": "Member Account" }
+          ]
+        },
+        {
+          "name": "Governance game Members (reverse)",
+          "hookstate_key": [
+            { "type": "Null", "byte_length": 12, "exclude": true },
+            { "type": "AccountID", "name": "Member Account" }
+          ],
+          "hookstate_data": [
+            { "type": "UInt8", "name": "Seat ID" }
+          ]
+        },
+        {
+          "name": "[SM] Member Bitfield",
+          "hookstate_key": [
+            { "type": "VarString", "name": "Identifier", "byte_length": 1, "pattern": "S", "binary": false, "exclude": false },
+            { "type": "VarString", "name": "Sub-identifier", "byte_length": 1, "pattern": "M", "binary": false, "exclude": false },
+            { "type": "Null", "byte_length": 30, "exclude": true }
+          ],
+          "hookstate_data": [
+            { "type": "Hash256", "name": "Bitfield" }
+          ]
+        },
+        {
+          "name": "[SL] Cleanup Low Watermark",
+          "hookstate_key": [
+            { "type": "VarString", "name": "Identifier", "byte_length": 1, "pattern": "S", "binary": false, "exclude": false },
+            { "type": "VarString", "name": "Sub-identifier", "byte_length": 1, "pattern": "L", "binary": false, "exclude": false },
+            { "type": "Null", "byte_length": 30, "exclude": true }
+          ],
+          "hookstate_data": [
+            { "type": "UInt64", "name": "Cleanup Lower Bound" }
+          ]
+        },
+        {
+          "name": "[SH] Cleanup High Watermark",
+          "hookstate_key": [
+            { "type": "VarString", "name": "Identifier", "byte_length": 1, "pattern": "S", "binary": false, "exclude": false },
+            { "type": "VarString", "name": "Sub-identifier", "byte_length": 1, "pattern": "H", "binary": false, "exclude": false },
+            { "type": "Null", "byte_length": 30, "exclude": true }
+          ],
+          "hookstate_data": [
+            { "type": "UInt64", "name": "Cleanup Upper Bound" }
+          ]
+        },
+        {
+          "name": "[C] Cleanup Entry",
+          "hookstate_key": [
+            { "type": "Null", "byte_length": 23, "exclude": true },
+            { "type": "VarString", "name": "Identifier", "byte_length": 1, "pattern": "C", "binary": false, "exclude": false },
+            { "type": "UInt64", "name": "Cleanup ID" }
+          ],
+          "hookstate_data": [
+            { "type": "UndeterminedVarString", "name": "Key to Delete", "binary": true }
+          ]
+        },
+        {
+          "name": "[O] Post Info",
+          "hookstate_key": [
+            { "type": "Null", "byte_length": 22, "exclude": true },
+            { "type": "VarString", "name": "Identifier", "byte_length": 1, "pattern": "O", "binary": false, "exclude": false },
+            { "type": "UInt8", "name": "Social Network ID" },
+            { "type": "UInt64", "name": "Post ID" }
+          ],
+          "hookstate_data": [
+            { "type": "UInt32", "name": "First Ledger Seq" },
+            { "type": "UInt8", "name": "Actioned" },
+            { "type": "VarString", "name": "Voter Bitfield", "byte_length": 32, "binary": true }
+          ]
+        },
+        {
+          "name": "[O] Opinion Vote Count",
+          "hookstate_key": [
+            { "type": "VarString", "name": "Identifier", "byte_length": 1, "pattern": "O", "binary": false, "exclude": false },
+            { "type": "VarString", "name": "Opinion Hash", "byte_length": 31, "binary": true }
+          ],
+          "hookstate_data": [
+            { "type": "UInt32", "name": "First Ledger Seq" },
+            { "type": "UInt8", "name": "Vote Count" }
+          ]
+        },
+        {
+          "name": "[B] Balance",
+          "hookstate_key": [
+            { "type": "VarString", "name": "Identifier", "byte_length": 1, "pattern": "B", "binary": false, "exclude": false },
+            { "type": "VarString", "name": "Balance Hash", "byte_length": 31, "binary": true }
+          ],
+          "hookstate_data": [
+            { "type": "XFL", "name": "Balance" },
+            { "type": "UInt8", "name": "Slot Index" }
+          ]
+        },
+        {
+          "name": "[U] User Currency Catalogue",
+          "hookstate_key": [
+            { "type": "Null", "byte_length": 11, "exclude": true },
+            { "type": "VarString", "name": "Identifier", "byte_length": 1, "pattern": "U", "binary": false, "exclude": false },
+            { "type": "UInt8", "name": "Social Network ID" },
+            { "type": "VarString", "name": "User ID or Account", "byte_length": 19, "binary": true }
+          ],
+          "hookstate_data": [
+            { "type": "Hash256", "name": "Currency Bitfield" }
+          ]
+        },
+        {
+          "name": "[U] User Currency Slot",
+          "hookstate_key": [
+            { "type": "Null", "byte_length": 10, "exclude": true },
+            { "type": "VarString", "name": "Identifier", "byte_length": 1, "pattern": "U", "binary": false, "exclude": false },
+            { "type": "UInt8", "name": "Social Network ID" },
+            { "type": "VarString", "name": "User ID or Account", "byte_length": 19, "binary": true },
+            { "type": "UInt8", "name": "Slot Index" }
+          ],
+          "hookstate_data": [
+            { "type": "VarString", "name": "Currency Code", "byte_length": 20, "binary": true },
+            { "type": "AccountID", "name": "Issuer" }
+          ]
+        },
+        {
+          "name": "[H] Pending Hook Upgrade",
+          "hookstate_key": [
+            { "type": "Null", "byte_length": 30, "exclude": true },
+            { "type": "VarString", "name": "Identifier", "byte_length": 1, "pattern": "H", "binary": false, "exclude": false },
+            { "type": "UInt8", "name": "Hook Position" }
+          ],
+          "hookstate_data": [
+            { "type": "Hash256", "name": "Hook Hash" }
+          ]
+        }
+      ]
+    }
+  }
+}
