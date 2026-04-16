@@ -1,0 +1,133 @@
+{
+    "name": "VPRA Race V2",
+    "description": null,
+    "icon": null,
+    "license": "Unlicensed",
+    "publishers": [
+        {
+            "type": "individual",
+            "name": "Transia-RnD",
+            "url": null
+        }
+    ],
+    "readme": null,
+    "repo": "https:\/\/github.com\/Transia-RnD\/vpra-hooks\/blob\/main\/contracts\/pet_raceV2.c",
+    "abi": {
+        "hookStates": [
+            {
+                "name": "Pet",
+                "description": "",
+                "selector": [
+                    {
+                        "type": "Hash256",
+                        "label": "Race Hash"
+                    }
+                ],
+                "data": [
+                    {
+                        "type": "UInt64",
+                        "label": "Race ID"
+                    },
+                    {
+                        "type": "VarString",
+                        "label": "Race Name",
+                        "byteLength": 32
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Status"
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Weight Class"
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Weather"
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Soil"
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Stalls"
+                    },
+                    {
+                        "type": "UInt32",
+                        "label": "Length"
+                    },
+                    {
+                        "type": "UInt32",
+                        "label": "Start"
+                    },
+                    {
+                        "type": "XFL",
+                        "label": "Entry Fee"
+                    },
+                    {
+                        "type": "XFL",
+                        "label": "Pool Fee"
+                    },
+                    {
+                        "type": "XFL",
+                        "label": "Track Fee"
+                    }
+                ]
+            },
+            {
+                "name": "Pet participation status",
+                "description": "",
+                "selector": [
+                    {
+                        "type": "Hash256",
+                        "label": "Pet Hash"
+                    }
+                ],
+                "data": [
+                    {
+                        "type": "UInt8",
+                        "label": "Participated"
+                    }
+                ]
+            },
+            {
+                "name": "Race Participation status",
+                "description": "",
+                "selector": [
+                    {
+                        "type": "Null",
+                        "label": "Null",
+                        "byteLength": 12
+                    },
+                    {
+                        "type": "AccountID",
+                        "label": "Hook Account"
+                    }
+                ],
+                "data": [
+                    {
+                        "type": "UInt8",
+                        "label": "Participated"
+                    }
+                ]
+            },
+            {
+                "name": "Prize Pool",
+                "description": "",
+                "selector": [
+                    {
+                        "type": "Hash256",
+                        "label": "Race Namespace"
+                    }
+                ],
+                "data": [
+                    {
+                        "type": "XFL",
+                        "label": "Prize Pool"
+                    }
+                ]
+            }
+        ]
+    }
+}

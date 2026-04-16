@@ -1,0 +1,56 @@
+{
+    "name": "Evernode Airdrop Distributor",
+    "description": null,
+    "icon": "https:\/\/xahau.xrplwin.com\/storage\/hooks\/998eecbc04313e634a6ae7d0c10f28027be502073d241ac867bc1ecb4dc03006\/version-user1.webp",
+    "license": "Unlicensed",
+    "publishers": [
+        {
+            "type": "individual",
+            "name": "Evernode Labs Pty Ltd",
+            "url": null
+        }
+    ],
+    "readme": null,
+    "repo": null,
+    "abi": {
+        "hookStates": [
+            {
+                "name": "Claimed accounts",
+                "description": "",
+                "selector": [
+                    {
+                        "type": "VarString",
+                        "label": "padding",
+                        "byteLength": 12
+                    },
+                    {
+                        "type": "AccountID",
+                        "label": "Claimer"
+                    }
+                ],
+                "data": [
+                    {
+                        "type": "UInt32",
+                        "label": "LedgerIndex or 4294967295 (if claimed)"
+                    }
+                ]
+            },
+            {
+                "name": "Pending emit records",
+                "description": "",
+                "selector": [
+                    {
+                        "type": "Hash256",
+                        "label": "Emitted TX"
+                    }
+                ],
+                "data": [
+                    {
+                        "type": "AccountID",
+                        "label": "Claimer"
+                    }
+                ]
+            }
+        ]
+    }
+}

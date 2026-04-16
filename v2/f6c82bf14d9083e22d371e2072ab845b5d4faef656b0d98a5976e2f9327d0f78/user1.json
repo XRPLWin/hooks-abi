@@ -1,0 +1,96 @@
+{
+    "name": "Xahau Docproof Contract v2",
+    "description": "Streamline document workflows with secure blockchain signatures.\n\nTransform document workflows with cryptographically sealed, instantly verifiable digital signatures powered by cutting-edge blockchain technology.",
+    "icon": "https:\/\/xahau.xrplwin.com\/storage\/hooks\/f6c82bf14d9083e22d371e2072ab845b5d4faef656b0d98a5976e2f9327d0f78\/version-user1.webp",
+    "license": "Unlicensed",
+    "publishers": [
+        {
+            "type": "individual",
+            "name": "Xahau DocProof",
+            "url": null
+        },
+        {
+            "type": "individual",
+            "name": "Andrei Rosseti",
+            "url": null
+        }
+    ],
+    "readme": null,
+    "repo": "https:\/\/github.com\/rosseti\/xahau-docproof",
+    "abi": {
+        "hookStates": [
+            {
+                "name": "Fee configuration",
+                "description": "",
+                "selector": [
+                    {
+                        "type": "Null",
+                        "label": "Null",
+                        "byteLength": 29
+                    },
+                    {
+                        "type": "VarString",
+                        "label": "Key",
+                        "byteLength": 3,
+                        "pattern": "FEE",
+                        "patternEncoding": "ascii"
+                    }
+                ],
+                "data": [
+                    {
+                        "type": "XFL",
+                        "label": "Value (XAH)"
+                    }
+                ]
+            },
+            {
+                "name": "Reserve configuration",
+                "description": "",
+                "selector": [
+                    {
+                        "type": "Null",
+                        "label": "Null",
+                        "byteLength": 25
+                    },
+                    {
+                        "type": "VarString",
+                        "label": "Key",
+                        "byteLength": 7,
+                        "pattern": "RESERVE",
+                        "patternEncoding": "ascii"
+                    }
+                ],
+                "data": [
+                    {
+                        "type": "XFL",
+                        "label": "Value (XAH)"
+                    }
+                ]
+            },
+            {
+                "name": "Signatures",
+                "description": "",
+                "selector": [
+                    {
+                        "type": "Hash256",
+                        "label": "DPSignature Hash"
+                    }
+                ],
+                "data": [
+                    {
+                        "type": "AccountID",
+                        "label": "Signer"
+                    },
+                    {
+                        "type": "Hash256",
+                        "label": "Document Hash"
+                    },
+                    {
+                        "type": "Hash256",
+                        "label": "Document ID"
+                    }
+                ]
+            }
+        ]
+    }
+}

@@ -53,25 +53,116 @@ class Converter
     }
 
 
+    $icon = null; //no icon in old schema
+    $name = $this->name;
+    $repo = null; //no repo in old schema
+    $description = null; //no description in old schema
+    $publishers = []; //no publishers in old schema
+
+    //try to find icon in xwa: https://xwa-xahau.xrplwin.com/v1/hookname/<HOOKHASH>?v=converter
+    $xwaUrl = 'https://xwa-xahau.xrplwin.com/v1/hookname/' . $this->hookHash . '?v=converter'; //json response with name and icon
+    try {
+      $xwaResponse = file_get_contents($xwaUrl);
+      if($xwaResponse !== false) {
+        $xwaData = json_decode($xwaResponse, true);
+
+        if(isset($xwaData['i']) && !empty($xwaData['i'])) {
+          $icon = $xwaData['i']; //url to icon
+        }
+
+        if(isset($xwaData['t']) && !empty($xwaData['t'])) {
+          $name = $xwaData['t']; //name from xwa
+        }
+
+        if(isset($xwaData['s']) && !empty($xwaData['s'])) {
+          $repo = $xwaData['s']; //repo from xwa
+        }
+
+        if(isset($xwaData['descr']) && !empty($xwaData['descr'])) {
+          $description = $xwaData['descr']; //description from xwa
+        }
+
+        if(isset($xwaData['principals']) && is_array($xwaData['principals']) && count($xwaData['principals']) > 0) {
+          foreach($xwaData['principals'] as $principal) {
+              $publishers[] = [
+                'type' => 'individual',
+                'name' => $principal,
+                'url' => null,
+              ];
+          }
+        }
+      }
+    } catch(Exception $e) {
+      //ignore errors
+    }
+
+    //if icon exists download it and save to ../v2-icons/<HOOKHASH>/user1.EXT
+    if($icon !== null) {
+
+      //if file already exists, skip downloading
+      $ext = pathinfo(parse_url($icon, PHP_URL_PATH), PATHINFO_EXTENSION);
+      $iconPath = __DIR__ . '/../v2-icons/' . \strtolower($this->hookHash) . '/version-user1.' . $ext;
+      if(file_exists($iconPath)) {
+        $icon = 'https://xahau.xrplwin.com/storage/hooks/' . \strtolower($this->hookHash) . '/version-user1.' . $ext;
+      } else {
+
+        try {
+          $iconContents = file_get_contents($icon);
+          if($iconContents !== false) {
+            $iconDir = __DIR__ . '/../v2-icons/' . \strtolower($this->hookHash);
+            if (!is_dir($iconDir)) {
+                mkdir($iconDir, 0777, true);
+            }
+            //get extension from url
+            $ext = pathinfo(parse_url($icon, PHP_URL_PATH), PATHINFO_EXTENSION);
+            file_put_contents($iconDir . '/version-user1.' . $ext, $iconContents);
+            //update icon path to local path
+            $icon = 'https://xahau.xrplwin.com/storage/hooks/' . \strtolower($this->hookHash) . '/version-user1.' . $ext;
+          }
+        } catch(Exception $e) {
+          //ignore errors
+          
+        }
+
+        //remove emtpy directory
+        $iconDir = __DIR__ . '/../v2-icons/' . \strtolower($this->hookHash);
+        if (is_dir($iconDir) && count(scandir($iconDir)) == 2) {
+          rmdir($iconDir);
+        }
+
+      }
+    }
+
     $full = [
-      'name' => $this->name,
-      'description' => null,
-      'icon' => null,
+      'name' => $name ,
+      'description' => $description,
+      'icon' => $icon,
       'license' => 'Unlicensed',
-      'publishers' => [],
+      'publishers' => $publishers ?? [],
       'readme' => null,
-      'repo' => null,
+      'repo' => $repo,
       'abi' => [
         'hookStates' => $final,
       ],
     ];
 
     //store $full in the directory ../v2/$hookHash/manifest.json
-    $dir = __DIR__ . '/../v2/' . $this->hookHash;
+    $dir = __DIR__ . '/../v2/' . \strtolower($this->hookHash);
     if (!is_dir($dir)) {
         mkdir($dir, 0777, true);
     }
-    file_put_contents($dir . '/manifest.json', json_encode($full, JSON_PRETTY_PRINT));
+    file_put_contents($dir . '/user1.json', json_encode($full, JSON_PRETTY_PRINT));
+
+    //create list.json
+    $listPath = __DIR__ . '/../v2/'.\strtolower($this->hookHash).'/list.json';
+    $list = [
+      [
+        'id' => 'user1',
+        'title' => 'xrplwin',
+        'weight' => 100
+      ]
+    ];
+    file_put_contents($listPath, json_encode($list));
 
     //dd($full);
   }

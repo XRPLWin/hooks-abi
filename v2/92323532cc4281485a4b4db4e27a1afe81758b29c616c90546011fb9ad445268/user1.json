@@ -1,0 +1,85 @@
+{
+    "name": "Ranking Hook",
+    "description": "Ranking is a hook programmed in C for the Xahau blockchain. A hook is a series of rules that enable smart logic in Xahau, considered the smart contracts of Xahau.\n\nRanking Hook is a Hook that turns your Xahau account into a score ranking manager for games. It's a simple idea so that others can get inspired and make better versions for their needs.",
+    "icon": "https:\/\/xahau.xrplwin.com\/storage\/hooks\/92323532cc4281485a4b4db4e27a1afe81758b29c616c90546011fb9ad445268\/version-user1.webp",
+    "license": "Unlicensed",
+    "publishers": [
+        {
+            "type": "individual",
+            "name": "Ekiserrepe",
+            "url": null
+        }
+    ],
+    "readme": null,
+    "repo": "https:\/\/github.com\/Ekiserrepe\/ranking-hook",
+    "abi": {
+        "hookStates": [
+            {
+                "name": "Account Rankings",
+                "description": "",
+                "selector": [
+                    {
+                        "type": "Null",
+                        "label": "Null",
+                        "byteLength": 31
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Rank"
+                    }
+                ],
+                "data": [
+                    {
+                        "type": "AccountID",
+                        "label": "Account"
+                    }
+                ]
+            },
+            {
+                "name": "Account Scores",
+                "description": "",
+                "selector": [
+                    {
+                        "type": "Null",
+                        "label": "Null",
+                        "byteLength": 31
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Rank"
+                    }
+                ],
+                "data": [
+                    {
+                        "type": "UInt64",
+                        "label": "Score"
+                    }
+                ]
+            },
+            {
+                "name": "Vault",
+                "description": "",
+                "selector": [
+                    {
+                        "type": "Null",
+                        "label": "Null",
+                        "byteLength": 27
+                    },
+                    {
+                        "type": "VarString",
+                        "label": "Vault",
+                        "byteLength": 5,
+                        "pattern": "VAULT",
+                        "patternEncoding": "ascii"
+                    }
+                ],
+                "data": [
+                    {
+                        "type": "UInt64",
+                        "label": "Amount"
+                    }
+                ]
+            }
+        ]
+    }
+}

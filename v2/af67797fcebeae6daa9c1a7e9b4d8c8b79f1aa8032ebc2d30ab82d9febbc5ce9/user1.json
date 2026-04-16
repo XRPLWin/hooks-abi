@@ -1,0 +1,137 @@
+{
+    "name": "VPRA Breed V2",
+    "description": null,
+    "icon": null,
+    "license": "Unlicensed",
+    "publishers": [
+        {
+            "type": "individual",
+            "name": "Transia-RnD",
+            "url": null
+        }
+    ],
+    "readme": null,
+    "repo": "https:\/\/github.com\/Transia-RnD\/vpra-hooks\/blob\/main\/contracts\/pet_breedV2.c",
+    "abi": {
+        "hookStates": [
+            {
+                "name": "Pet",
+                "description": "",
+                "selector": [
+                    {
+                        "type": "Hash256",
+                        "label": "Pet ID"
+                    }
+                ],
+                "data": [
+                    {
+                        "type": "VarString",
+                        "label": "Name",
+                        "byteLength": 32
+                    },
+                    {
+                        "type": "UInt64",
+                        "label": "ID"
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Gender"
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Age"
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Breed"
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Size"
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Body"
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Hooves"
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Speed"
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Stamina"
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Temperament"
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Training"
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Health"
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Lifespan"
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Affinity"
+                    },
+                    {
+                        "type": "UInt64",
+                        "label": "Morale"
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "IsBreedable"
+                    },
+                    {
+                        "type": "XFL",
+                        "label": "BreedPrice"
+                    },
+                    {
+                        "type": "Hash256",
+                        "label": "TokenID"
+                    },
+                    {
+                        "type": "UInt64",
+                        "label": "Wins"
+                    },
+                    {
+                        "type": "XFL",
+                        "label": "Total"
+                    }
+                ]
+            },
+            {
+                "name": "Pet Count",
+                "description": "",
+                "selector": [
+                    {
+                        "type": "Null",
+                        "label": "Null",
+                        "byteLength": 12
+                    },
+                    {
+                        "type": "AccountID",
+                        "label": "Hook Account"
+                    }
+                ],
+                "data": [
+                    {
+                        "type": "UInt64",
+                        "label": "Pet Count"
+                    }
+                ]
+            }
+        ]
+    }
+}
