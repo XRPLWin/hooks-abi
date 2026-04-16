@@ -1,0 +1,1557 @@
+{
+    "name": "Evernode Heartbeat Hook v5",
+    "description": null,
+    "icon": "https:\/\/xahau.xrplwin.com\/storage\/hooks\/4d2f7137d98abe42d82400f2b6dced604c108b8343e499a17f0f5c431d55a67c\/version-user1.webp",
+    "license": "Unlicensed",
+    "publishers": [
+        {
+            "type": "individual",
+            "name": "Evernode Labs Pty Ltd",
+            "url": null
+        }
+    ],
+    "readme": null,
+    "repo": "https:\/\/github.com\/EvernodeXRPL\/evernode-hook\/tree\/main\/evernode-heartbeat-hook",
+    "abi": {
+        "hookStates": [
+            {
+                "name": "Issuer Address",
+                "description": "",
+                "selector": [
+                    {
+                        "type": "VarString",
+                        "label": "Key",
+                        "byteLength": 3,
+                        "pattern": "EVR",
+                        "patternEncoding": "ascii"
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Prefix",
+                        "pattern": "1",
+                        "patternEncoding": "ascii"
+                    },
+                    {
+                        "type": "Null",
+                        "label": "VarString",
+                        "byteLength": 27,
+                        "exclude": true
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Index",
+                        "pattern": "1",
+                        "patternEncoding": "ascii"
+                    }
+                ],
+                "data": [
+                    {
+                        "type": "AccountID",
+                        "label": "Address"
+                    }
+                ]
+            },
+            {
+                "name": "Foundation Address",
+                "description": "",
+                "selector": [
+                    {
+                        "type": "VarString",
+                        "label": "Key",
+                        "byteLength": 3,
+                        "pattern": "EVR",
+                        "patternEncoding": "ascii"
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Prefix",
+                        "pattern": "1",
+                        "patternEncoding": "ascii"
+                    },
+                    {
+                        "type": "Null",
+                        "label": "VarString",
+                        "byteLength": 27,
+                        "exclude": true
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Index",
+                        "pattern": "2",
+                        "patternEncoding": "ascii"
+                    }
+                ],
+                "data": [
+                    {
+                        "type": "AccountID",
+                        "label": "Address"
+                    }
+                ]
+            },
+            {
+                "name": "Moment Size",
+                "description": "",
+                "selector": [
+                    {
+                        "type": "VarString",
+                        "label": "Key",
+                        "byteLength": 3,
+                        "pattern": "EVR",
+                        "patternEncoding": "ascii"
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Prefix",
+                        "pattern": "1",
+                        "patternEncoding": "ascii"
+                    },
+                    {
+                        "type": "Null",
+                        "label": "VarString",
+                        "byteLength": 27,
+                        "exclude": true
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Index",
+                        "pattern": "3",
+                        "patternEncoding": "ascii"
+                    }
+                ],
+                "data": [
+                    {
+                        "type": "UInt16",
+                        "label": "Size"
+                    }
+                ]
+            },
+            {
+                "name": "Mint Limit",
+                "description": "",
+                "selector": [
+                    {
+                        "type": "VarString",
+                        "label": "Key",
+                        "byteLength": 3,
+                        "pattern": "EVR",
+                        "patternEncoding": "ascii"
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Prefix",
+                        "pattern": "1",
+                        "patternEncoding": "ascii"
+                    },
+                    {
+                        "type": "Null",
+                        "label": "VarString",
+                        "byteLength": 27,
+                        "exclude": true
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Index",
+                        "pattern": "4",
+                        "patternEncoding": "ascii"
+                    }
+                ],
+                "data": [
+                    {
+                        "type": "UInt64",
+                        "label": "Limit"
+                    }
+                ]
+            },
+            {
+                "name": "Fixed Reg Fee",
+                "description": "",
+                "selector": [
+                    {
+                        "type": "VarString",
+                        "label": "Key",
+                        "byteLength": 3,
+                        "pattern": "EVR",
+                        "patternEncoding": "ascii"
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Prefix",
+                        "pattern": "1",
+                        "patternEncoding": "ascii"
+                    },
+                    {
+                        "type": "Null",
+                        "label": "VarString",
+                        "byteLength": 27,
+                        "exclude": true
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Index",
+                        "pattern": "5",
+                        "patternEncoding": "ascii"
+                    }
+                ],
+                "data": [
+                    {
+                        "type": "UInt64",
+                        "label": "Fee"
+                    }
+                ]
+            },
+            {
+                "name": "Host Heartbeat Freq",
+                "description": "",
+                "selector": [
+                    {
+                        "type": "VarString",
+                        "label": "Key",
+                        "byteLength": 3,
+                        "pattern": "EVR",
+                        "patternEncoding": "ascii"
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Prefix",
+                        "pattern": "1",
+                        "patternEncoding": "ascii"
+                    },
+                    {
+                        "type": "Null",
+                        "label": "VarString",
+                        "byteLength": 27,
+                        "exclude": true
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Index",
+                        "pattern": "6",
+                        "patternEncoding": "ascii"
+                    }
+                ],
+                "data": [
+                    {
+                        "type": "UInt16",
+                        "label": "Freq"
+                    }
+                ]
+            },
+            {
+                "name": "Lease Acquire Window",
+                "description": "",
+                "selector": [
+                    {
+                        "type": "VarString",
+                        "label": "Key",
+                        "byteLength": 3,
+                        "pattern": "EVR",
+                        "patternEncoding": "ascii"
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Prefix",
+                        "pattern": "1",
+                        "patternEncoding": "ascii"
+                    },
+                    {
+                        "type": "Null",
+                        "label": "VarString",
+                        "byteLength": 27,
+                        "exclude": true
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Index",
+                        "pattern": "7",
+                        "patternEncoding": "ascii"
+                    }
+                ],
+                "data": [
+                    {
+                        "type": "UInt16",
+                        "label": "Window"
+                    }
+                ]
+            },
+            {
+                "name": "Reward Configuration",
+                "description": "",
+                "selector": [
+                    {
+                        "type": "VarString",
+                        "label": "Key",
+                        "byteLength": 3,
+                        "pattern": "EVR",
+                        "patternEncoding": "ascii"
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Prefix",
+                        "pattern": "1",
+                        "patternEncoding": "ascii"
+                    },
+                    {
+                        "type": "Null",
+                        "label": "VarString",
+                        "byteLength": 27,
+                        "exclude": true
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Index",
+                        "pattern": "8",
+                        "patternEncoding": "ascii"
+                    }
+                ],
+                "data": [
+                    {
+                        "type": "UInt8",
+                        "label": "Epoch Count"
+                    },
+                    {
+                        "type": "UInt32",
+                        "label": "First Epoch Reward Quota"
+                    },
+                    {
+                        "type": "UInt32",
+                        "label": "Epoch Reward Amount"
+                    },
+                    {
+                        "type": "UInt32",
+                        "label": "Reward Start Moment"
+                    },
+                    {
+                        "type": "UInt16",
+                        "label": "Accumulated Reward Frequency"
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Host Reputation Threshold"
+                    },
+                    {
+                        "type": "UInt32",
+                        "label": "Host Min Instance Count"
+                    }
+                ]
+            },
+            {
+                "name": "Reward Configuration",
+                "description": "",
+                "selector": [
+                    {
+                        "type": "VarString",
+                        "label": "Key",
+                        "byteLength": 3,
+                        "pattern": "EVR",
+                        "patternEncoding": "ascii"
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Prefix",
+                        "pattern": "1",
+                        "patternEncoding": "ascii"
+                    },
+                    {
+                        "type": "Null",
+                        "label": "VarString",
+                        "byteLength": 27,
+                        "exclude": true
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Index",
+                        "pattern": "8",
+                        "patternEncoding": "ascii"
+                    }
+                ],
+                "data": [
+                    {
+                        "type": "UInt8",
+                        "label": "Epoch Count"
+                    },
+                    {
+                        "type": "UInt32",
+                        "label": "First Epoch Reward Quota"
+                    },
+                    {
+                        "type": "UInt32",
+                        "label": "Epoch Reward Amount"
+                    },
+                    {
+                        "type": "UInt32",
+                        "label": "Reward Start Moment"
+                    },
+                    {
+                        "type": "UInt16",
+                        "label": "Accumulated Reward Frequency"
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Host Reputation Threshold"
+                    }
+                ]
+            },
+            {
+                "name": "Max Tolerable Downtime",
+                "description": "",
+                "selector": [
+                    {
+                        "type": "VarString",
+                        "label": "Key",
+                        "byteLength": 3,
+                        "pattern": "EVR",
+                        "patternEncoding": "ascii"
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Prefix",
+                        "pattern": "1",
+                        "patternEncoding": "ascii"
+                    },
+                    {
+                        "type": "Null",
+                        "label": "VarString",
+                        "byteLength": 27,
+                        "exclude": true
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Index",
+                        "pattern": "9",
+                        "patternEncoding": "ascii"
+                    }
+                ],
+                "data": [
+                    {
+                        "type": "UInt16",
+                        "label": "Max Tolerable Downtime"
+                    }
+                ]
+            },
+            {
+                "name": "Moment Transit Info",
+                "description": "",
+                "selector": [
+                    {
+                        "type": "VarString",
+                        "label": "Key",
+                        "byteLength": 3,
+                        "pattern": "EVR",
+                        "patternEncoding": "ascii"
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Prefix",
+                        "pattern": "1",
+                        "patternEncoding": "ascii"
+                    },
+                    {
+                        "type": "Null",
+                        "label": "VarString",
+                        "byteLength": 27,
+                        "exclude": true
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Index",
+                        "pattern": "10",
+                        "patternEncoding": "ascii"
+                    }
+                ],
+                "data": [
+                    {
+                        "type": "UInt64",
+                        "label": "Transition Index"
+                    },
+                    {
+                        "type": "UInt16",
+                        "label": "Moment Size"
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Index Type"
+                    }
+                ]
+            },
+            {
+                "name": "Max Emit Trx Fee",
+                "description": "",
+                "selector": [
+                    {
+                        "type": "VarString",
+                        "label": "Key",
+                        "byteLength": 3,
+                        "pattern": "EVR",
+                        "patternEncoding": "ascii"
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Prefix",
+                        "pattern": "1",
+                        "patternEncoding": "ascii"
+                    },
+                    {
+                        "type": "Null",
+                        "label": "VarString",
+                        "byteLength": 27,
+                        "exclude": true
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Index",
+                        "pattern": "11",
+                        "patternEncoding": "ascii"
+                    }
+                ],
+                "data": [
+                    {
+                        "type": "UInt64",
+                        "label": "Max Emit Trx Fee"
+                    }
+                ]
+            },
+            {
+                "name": "Heartbeat Addr",
+                "description": "",
+                "selector": [
+                    {
+                        "type": "VarString",
+                        "label": "Key",
+                        "byteLength": 3,
+                        "pattern": "EVR",
+                        "patternEncoding": "ascii"
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Prefix",
+                        "pattern": "1",
+                        "patternEncoding": "ascii"
+                    },
+                    {
+                        "type": "Null",
+                        "label": "VarString",
+                        "byteLength": 27,
+                        "exclude": true
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Index",
+                        "pattern": "12",
+                        "patternEncoding": "ascii"
+                    }
+                ],
+                "data": [
+                    {
+                        "type": "AccountID",
+                        "label": "Address"
+                    }
+                ]
+            },
+            {
+                "name": "Registry Addr",
+                "description": "",
+                "selector": [
+                    {
+                        "type": "VarString",
+                        "label": "Key",
+                        "byteLength": 3,
+                        "pattern": "EVR",
+                        "patternEncoding": "ascii"
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Prefix",
+                        "pattern": "1",
+                        "patternEncoding": "ascii"
+                    },
+                    {
+                        "type": "Null",
+                        "label": "VarString",
+                        "byteLength": 27,
+                        "exclude": true
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Index",
+                        "pattern": "13",
+                        "patternEncoding": "ascii"
+                    }
+                ],
+                "data": [
+                    {
+                        "type": "AccountID",
+                        "label": "Address"
+                    }
+                ]
+            },
+            {
+                "name": "Governance Configuration",
+                "description": "",
+                "selector": [
+                    {
+                        "type": "VarString",
+                        "label": "Key",
+                        "byteLength": 3,
+                        "pattern": "EVR",
+                        "patternEncoding": "ascii"
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Prefix",
+                        "pattern": "1",
+                        "patternEncoding": "ascii"
+                    },
+                    {
+                        "type": "Null",
+                        "label": "VarString",
+                        "byteLength": 27,
+                        "exclude": true
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Index",
+                        "pattern": "14",
+                        "patternEncoding": "ascii"
+                    }
+                ],
+                "data": [
+                    {
+                        "type": "UInt32",
+                        "label": "Eligibility Period"
+                    },
+                    {
+                        "type": "UInt32",
+                        "label": "Candidate Life Period"
+                    },
+                    {
+                        "type": "UInt32",
+                        "label": "Candidate Election Period"
+                    },
+                    {
+                        "type": "UInt16",
+                        "label": "Candidate Support Average"
+                    }
+                ]
+            },
+            {
+                "name": "Network Configuration",
+                "description": "",
+                "selector": [
+                    {
+                        "type": "VarString",
+                        "label": "Key",
+                        "byteLength": 3,
+                        "pattern": "EVR",
+                        "patternEncoding": "ascii"
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Prefix",
+                        "pattern": "1",
+                        "patternEncoding": "ascii"
+                    },
+                    {
+                        "type": "Null",
+                        "label": "VarString",
+                        "byteLength": 27,
+                        "exclude": true
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Index",
+                        "pattern": "15",
+                        "patternEncoding": "ascii"
+                    }
+                ],
+                "data": [
+                    {
+                        "type": "UInt32",
+                        "label": "Busyness Detect Period"
+                    },
+                    {
+                        "type": "UInt16",
+                        "label": "Busyness Detect Average"
+                    }
+                ]
+            },
+            {
+                "name": "Host Count",
+                "description": "",
+                "selector": [
+                    {
+                        "type": "VarString",
+                        "label": "Key",
+                        "byteLength": 3,
+                        "pattern": "EVR",
+                        "patternEncoding": "ascii"
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Index",
+                        "pattern": "50",
+                        "patternEncoding": "ascii"
+                    },
+                    {
+                        "type": "Null",
+                        "label": "padding",
+                        "byteLength": 28,
+                        "exclude": true
+                    }
+                ],
+                "data": [
+                    {
+                        "type": "UInt32",
+                        "label": "host_count"
+                    }
+                ]
+            },
+            {
+                "name": "Moment Base Info",
+                "description": "",
+                "selector": [
+                    {
+                        "type": "VarString",
+                        "label": "Key",
+                        "byteLength": 3,
+                        "pattern": "EVR",
+                        "patternEncoding": "ascii"
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Index",
+                        "pattern": "51",
+                        "patternEncoding": "ascii"
+                    },
+                    {
+                        "type": "Null",
+                        "label": "padding",
+                        "byteLength": 28,
+                        "exclude": true
+                    }
+                ],
+                "data": [
+                    {
+                        "type": "UInt64",
+                        "label": "transition_index"
+                    },
+                    {
+                        "type": "UInt32",
+                        "label": "transition_moment"
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "index_type"
+                    }
+                ]
+            },
+            {
+                "name": "Host Reg Fees",
+                "description": "",
+                "selector": [
+                    {
+                        "type": "VarString",
+                        "label": "Key",
+                        "byteLength": 3,
+                        "pattern": "EVR",
+                        "patternEncoding": "ascii"
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Index",
+                        "pattern": "52",
+                        "patternEncoding": "ascii"
+                    },
+                    {
+                        "type": "Null",
+                        "label": "padding",
+                        "byteLength": 28,
+                        "exclude": true
+                    }
+                ],
+                "data": [
+                    {
+                        "type": "UInt64",
+                        "label": "Host Fee"
+                    }
+                ]
+            },
+            {
+                "name": "Max Reg",
+                "description": "",
+                "selector": [
+                    {
+                        "type": "VarString",
+                        "label": "Key",
+                        "byteLength": 3,
+                        "pattern": "EVR",
+                        "patternEncoding": "ascii"
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Index",
+                        "pattern": "53",
+                        "patternEncoding": "ascii"
+                    },
+                    {
+                        "type": "Null",
+                        "label": "padding",
+                        "byteLength": 28,
+                        "exclude": true
+                    }
+                ],
+                "data": [
+                    {
+                        "type": "UInt64",
+                        "label": "Max Regs"
+                    }
+                ]
+            },
+            {
+                "name": "Reward Info",
+                "description": "",
+                "selector": [
+                    {
+                        "type": "VarString",
+                        "label": "Key",
+                        "byteLength": 3,
+                        "pattern": "EVR",
+                        "patternEncoding": "ascii"
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Index",
+                        "pattern": "54",
+                        "patternEncoding": "ascii"
+                    },
+                    {
+                        "type": "Null",
+                        "label": "padding",
+                        "byteLength": 28,
+                        "exclude": true
+                    }
+                ],
+                "data": [
+                    {
+                        "type": "UInt8",
+                        "label": "Epoch"
+                    },
+                    {
+                        "type": "UInt32",
+                        "label": "Saved Moment"
+                    },
+                    {
+                        "type": "UInt32",
+                        "label": "Prev Moment Active Host Count"
+                    },
+                    {
+                        "type": "UInt32",
+                        "label": "Cur Moment Active Host Count"
+                    },
+                    {
+                        "type": "XFL",
+                        "label": "Epoch Pool"
+                    },
+                    {
+                        "type": "XFL",
+                        "label": "Host Max Lease Amount"
+                    }
+                ]
+            },
+            {
+                "name": "Reward Info",
+                "description": "",
+                "selector": [
+                    {
+                        "type": "VarString",
+                        "label": "Key",
+                        "byteLength": 3,
+                        "pattern": "EVR",
+                        "patternEncoding": "ascii"
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Index",
+                        "pattern": "54",
+                        "patternEncoding": "ascii"
+                    },
+                    {
+                        "type": "Null",
+                        "label": "padding",
+                        "byteLength": 28,
+                        "exclude": true
+                    }
+                ],
+                "data": [
+                    {
+                        "type": "UInt8",
+                        "label": "Epoch"
+                    },
+                    {
+                        "type": "UInt32",
+                        "label": "Saved Moment"
+                    },
+                    {
+                        "type": "UInt32",
+                        "label": "Prev Moment Active Host Count"
+                    },
+                    {
+                        "type": "UInt32",
+                        "label": "Cur Moment Active Host Count"
+                    },
+                    {
+                        "type": "XFL",
+                        "label": "Epoch Pool"
+                    }
+                ]
+            },
+            {
+                "name": "Governance Info",
+                "description": "",
+                "selector": [
+                    {
+                        "type": "VarString",
+                        "label": "Key",
+                        "byteLength": 3,
+                        "pattern": "EVR",
+                        "patternEncoding": "ascii"
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Index",
+                        "pattern": "55",
+                        "patternEncoding": "ascii"
+                    },
+                    {
+                        "type": "Null",
+                        "label": "padding",
+                        "byteLength": 28,
+                        "exclude": true
+                    }
+                ],
+                "data": [
+                    {
+                        "type": "UInt8",
+                        "label": "Governance Mode"
+                    },
+                    {
+                        "type": "UInt32",
+                        "label": "Last Candidate Idx"
+                    },
+                    {
+                        "type": "UInt32",
+                        "label": "Voter Base Count"
+                    },
+                    {
+                        "type": "UInt64",
+                        "label": "Voter Base Count Changed Timestamp"
+                    },
+                    {
+                        "type": "UInt32",
+                        "label": "Foundation Last Voted Candidate Idx"
+                    },
+                    {
+                        "type": "UInt64",
+                        "label": "Foundation Last Voted Timestamp"
+                    },
+                    {
+                        "type": "Hash256",
+                        "label": "Elected Proposal Unique Id"
+                    },
+                    {
+                        "type": "UInt64",
+                        "label": "Proposal Elected Timestamp"
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Updated Hook Count"
+                    }
+                ]
+            },
+            {
+                "name": "Trx Fee Base Info",
+                "description": "",
+                "selector": [
+                    {
+                        "type": "VarString",
+                        "label": "Key",
+                        "byteLength": 3,
+                        "pattern": "EVR",
+                        "patternEncoding": "ascii"
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Index",
+                        "pattern": "56",
+                        "patternEncoding": "ascii"
+                    },
+                    {
+                        "type": "Null",
+                        "label": "padding",
+                        "byteLength": 28,
+                        "exclude": true
+                    }
+                ],
+                "data": [
+                    {
+                        "type": "UInt32",
+                        "label": "Fee Base Avg"
+                    },
+                    {
+                        "type": "UInt64",
+                        "label": "Avg Changed Idx"
+                    },
+                    {
+                        "type": "UInt32",
+                        "label": "Avg Accumulator"
+                    },
+                    {
+                        "type": "UInt16",
+                        "label": "Counter"
+                    }
+                ]
+            },
+            {
+                "name": "Token Id",
+                "description": "",
+                "selector": [
+                    {
+                        "type": "VarString",
+                        "label": "Key",
+                        "byteLength": 3,
+                        "pattern": "EVR",
+                        "patternEncoding": "ascii"
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Index",
+                        "pattern": "2",
+                        "patternEncoding": "ascii"
+                    },
+                    {
+                        "type": "VarString",
+                        "label": "TokenID",
+                        "byteLength": 28
+                    }
+                ],
+                "data": [
+                    {
+                        "type": "AccountID",
+                        "label": "Host Address"
+                    },
+                    {
+                        "type": "VarString",
+                        "label": "CPU Model Name",
+                        "byteLength": 40
+                    },
+                    {
+                        "type": "UInt16",
+                        "label": "CPU Count"
+                    },
+                    {
+                        "type": "UInt16",
+                        "label": "CPU Speed"
+                    },
+                    {
+                        "type": "UInt32",
+                        "label": "CPU Microsec"
+                    },
+                    {
+                        "type": "UInt32",
+                        "label": "RAM MB"
+                    },
+                    {
+                        "type": "UInt32",
+                        "label": "Disk MB"
+                    },
+                    {
+                        "type": "VarString",
+                        "label": "Email",
+                        "byteLength": 40
+                    },
+                    {
+                        "type": "XFL",
+                        "label": "Accumulated Reward Amount"
+                    }
+                ]
+            },
+            {
+                "name": "Host Address",
+                "description": "",
+                "selector": [
+                    {
+                        "type": "VarString",
+                        "label": "Key",
+                        "byteLength": 3,
+                        "pattern": "EVR",
+                        "patternEncoding": "ascii"
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Index",
+                        "pattern": "3",
+                        "patternEncoding": "ascii"
+                    },
+                    {
+                        "type": "Null",
+                        "label": "padding",
+                        "byteLength": 8,
+                        "exclude": true
+                    },
+                    {
+                        "type": "AccountID",
+                        "label": "Account"
+                    }
+                ],
+                "data": [
+                    {
+                        "type": "VarString",
+                        "label": "TokenID",
+                        "byteLength": 32
+                    },
+                    {
+                        "type": "VarString",
+                        "label": "Country Code",
+                        "byteLength": 2
+                    },
+                    {
+                        "type": "VarString",
+                        "label": "Reserved",
+                        "byteLength": 8
+                    },
+                    {
+                        "type": "VarString",
+                        "label": "Description",
+                        "byteLength": 26
+                    },
+                    {
+                        "type": "UInt64",
+                        "label": "Registration Ledger"
+                    },
+                    {
+                        "type": "UInt64",
+                        "label": "Registration Fee"
+                    },
+                    {
+                        "type": "UInt32",
+                        "label": "No of Total Instances"
+                    },
+                    {
+                        "type": "UInt32",
+                        "label": "No of Active Instances"
+                    },
+                    {
+                        "type": "UInt64",
+                        "label": "Last Heartbeat Index"
+                    },
+                    {
+                        "type": "Blob",
+                        "label": "Version",
+                        "byteLength": 3
+                    },
+                    {
+                        "type": "UInt64",
+                        "label": "Registration Timestamp"
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Transfer Flag"
+                    },
+                    {
+                        "type": "UInt32",
+                        "label": "Last Vote Candidate Idx"
+                    },
+                    {
+                        "type": "UInt64",
+                        "label": "Last Vote Timestamp"
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Support Vote Sent"
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Host Reputation"
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Flags"
+                    },
+                    {
+                        "type": "UInt64",
+                        "label": "Transfer Timestamp"
+                    },
+                    {
+                        "type": "XFL",
+                        "label": "Host Lease Amount"
+                    }
+                ]
+            },
+            {
+                "name": "Host Address",
+                "description": "",
+                "selector": [
+                    {
+                        "type": "VarString",
+                        "label": "Key",
+                        "byteLength": 3,
+                        "pattern": "EVR",
+                        "patternEncoding": "ascii"
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Index",
+                        "pattern": "3",
+                        "patternEncoding": "ascii"
+                    },
+                    {
+                        "type": "Null",
+                        "label": "padding",
+                        "byteLength": 8,
+                        "exclude": true
+                    },
+                    {
+                        "type": "AccountID",
+                        "label": "Account"
+                    }
+                ],
+                "data": [
+                    {
+                        "type": "VarString",
+                        "label": "TokenID",
+                        "byteLength": 32
+                    },
+                    {
+                        "type": "VarString",
+                        "label": "Country Code",
+                        "byteLength": 2
+                    },
+                    {
+                        "type": "VarString",
+                        "label": "Reserved",
+                        "byteLength": 8
+                    },
+                    {
+                        "type": "VarString",
+                        "label": "Description",
+                        "byteLength": 26
+                    },
+                    {
+                        "type": "UInt64",
+                        "label": "Registration Ledger"
+                    },
+                    {
+                        "type": "UInt64",
+                        "label": "Registration Fee"
+                    },
+                    {
+                        "type": "UInt32",
+                        "label": "No of Total Instances"
+                    },
+                    {
+                        "type": "UInt32",
+                        "label": "No of Active Instances"
+                    },
+                    {
+                        "type": "UInt64",
+                        "label": "Last Heartbeat Index"
+                    },
+                    {
+                        "type": "Blob",
+                        "label": "Version",
+                        "byteLength": 3
+                    },
+                    {
+                        "type": "UInt64",
+                        "label": "Registration Timestamp"
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Transfer Flag"
+                    },
+                    {
+                        "type": "UInt32",
+                        "label": "Last Vote Candidate Idx"
+                    },
+                    {
+                        "type": "UInt64",
+                        "label": "Last Vote Timestamp"
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Support Vote Sent"
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Host Reputation"
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Flags"
+                    },
+                    {
+                        "type": "UInt64",
+                        "label": "Transfer Timestamp"
+                    }
+                ]
+            },
+            {
+                "name": "Host Address",
+                "description": "",
+                "selector": [
+                    {
+                        "type": "VarString",
+                        "label": "Key",
+                        "byteLength": 3,
+                        "pattern": "EVR",
+                        "patternEncoding": "ascii"
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Index",
+                        "pattern": "3",
+                        "patternEncoding": "ascii"
+                    },
+                    {
+                        "type": "Null",
+                        "label": "padding",
+                        "byteLength": 8,
+                        "exclude": true
+                    },
+                    {
+                        "type": "AccountID",
+                        "label": "Account"
+                    }
+                ],
+                "data": [
+                    {
+                        "type": "VarString",
+                        "label": "TokenID",
+                        "byteLength": 32
+                    },
+                    {
+                        "type": "VarString",
+                        "label": "Country Code",
+                        "byteLength": 2
+                    },
+                    {
+                        "type": "VarString",
+                        "label": "Reserved",
+                        "byteLength": 8
+                    },
+                    {
+                        "type": "VarString",
+                        "label": "Description",
+                        "byteLength": 26
+                    },
+                    {
+                        "type": "UInt64",
+                        "label": "Registration Ledger"
+                    },
+                    {
+                        "type": "UInt64",
+                        "label": "Registration Fee"
+                    },
+                    {
+                        "type": "UInt32",
+                        "label": "No of Total Instances"
+                    },
+                    {
+                        "type": "UInt32",
+                        "label": "No of Active Instances"
+                    },
+                    {
+                        "type": "UInt64",
+                        "label": "Last Heartbeat Index"
+                    },
+                    {
+                        "type": "Blob",
+                        "label": "Version",
+                        "byteLength": 3
+                    },
+                    {
+                        "type": "UInt64",
+                        "label": "Registration Timestamp"
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Transfer Flag"
+                    },
+                    {
+                        "type": "UInt32",
+                        "label": "Last Vote Candidate Idx"
+                    },
+                    {
+                        "type": "UInt64",
+                        "label": "Last Vote Timestamp"
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Support Vote Sent"
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Host Reputation"
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Flags"
+                    }
+                ]
+            },
+            {
+                "name": "Transferee Address",
+                "description": "",
+                "selector": [
+                    {
+                        "type": "VarString",
+                        "label": "Key",
+                        "byteLength": 3,
+                        "pattern": "EVR",
+                        "patternEncoding": "ascii"
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Index",
+                        "pattern": "4",
+                        "patternEncoding": "ascii"
+                    },
+                    {
+                        "type": "Null",
+                        "label": "padding",
+                        "byteLength": 8,
+                        "exclude": true
+                    },
+                    {
+                        "type": "AccountID",
+                        "label": "Account"
+                    }
+                ],
+                "data": [
+                    {
+                        "type": "AccountID",
+                        "label": "Transferring Host Address"
+                    },
+                    {
+                        "type": "UInt64",
+                        "label": "Registration Ledger"
+                    },
+                    {
+                        "type": "VarString",
+                        "label": "TokenID",
+                        "byteLength": 32
+                    }
+                ]
+            },
+            {
+                "name": "Candidate Owner",
+                "description": "",
+                "selector": [
+                    {
+                        "type": "VarString",
+                        "label": "Key",
+                        "byteLength": 3,
+                        "pattern": "EVR",
+                        "patternEncoding": "ascii"
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Index",
+                        "pattern": "5",
+                        "patternEncoding": "ascii"
+                    },
+                    {
+                        "type": "Null",
+                        "label": "padding",
+                        "byteLength": 8,
+                        "exclude": true
+                    },
+                    {
+                        "type": "AccountID",
+                        "label": "Account"
+                    }
+                ],
+                "data": [
+                    {
+                        "type": "Hash256",
+                        "label": "Governor Hash"
+                    },
+                    {
+                        "type": "Hash256",
+                        "label": "Registry Hash"
+                    },
+                    {
+                        "type": "Hash256",
+                        "label": "Heartbeat Hash"
+                    }
+                ]
+            },
+            {
+                "name": "Candidate ID",
+                "description": "",
+                "selector": [
+                    {
+                        "type": "VarString",
+                        "label": "Key",
+                        "byteLength": 3,
+                        "pattern": "EVR",
+                        "patternEncoding": "ascii"
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Index",
+                        "pattern": "6",
+                        "patternEncoding": "ascii"
+                    },
+                    {
+                        "type": "VarString",
+                        "label": "CandidateID",
+                        "byteLength": 28
+                    }
+                ],
+                "data": [
+                    {
+                        "type": "AccountID",
+                        "label": "Owner Address"
+                    },
+                    {
+                        "type": "UInt32",
+                        "label": "Candidate Idx"
+                    },
+                    {
+                        "type": "VarString",
+                        "label": "Short Name",
+                        "byteLength": 20
+                    },
+                    {
+                        "type": "UInt64",
+                        "label": "Created Timestamp"
+                    },
+                    {
+                        "type": "UInt64",
+                        "label": "Proposal Fee"
+                    },
+                    {
+                        "type": "UInt32",
+                        "label": "Positive Vote Count"
+                    },
+                    {
+                        "type": "UInt64",
+                        "label": "Last Vote Timestamp"
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Status"
+                    },
+                    {
+                        "type": "UInt64",
+                        "label": "Status Change Timestamp"
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Foundation Vote Status"
+                    }
+                ]
+            }
+        ]
+    }
+}

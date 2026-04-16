@@ -1,0 +1,67 @@
+{
+    "name": "Treasury Hook",
+    "description": "Voluntarily lock up the amount of XAH going out from the treasury account every set ledger interval.\n\nThe idea is to blackhole the treasury account, and the only way to withdraw funds is through the invoke transaction. Anybody can invoke the claim reward and the withdraw transactions on treasury account - after specified ledger interval.",
+    "icon": "https:\/\/xahau.xrplwin.com\/storage\/hooks\/11b6f1534186086ef95e297f64806d8e4231865ee9871a0c438ea8a51be20bd8\/version-user1.webp",
+    "license": "Unlicensed",
+    "publishers": [
+        {
+            "type": "individual",
+            "name": "XRPL-Labs",
+            "url": null
+        }
+    ],
+    "readme": null,
+    "repo": "https:\/\/github.com\/Xahau\/TreasuryHook",
+    "abi": {
+        "hookStates": [
+            {
+                "name": "Prev ledger",
+                "description": "",
+                "selector": [
+                    {
+                        "type": "Null",
+                        "label": "padding",
+                        "byteLength": 28
+                    },
+                    {
+                        "type": "VarString",
+                        "label": "Key",
+                        "byteLength": 4,
+                        "pattern": "PREV",
+                        "patternEncoding": "ascii"
+                    }
+                ],
+                "data": [
+                    {
+                        "type": "UInt32",
+                        "label": "LedgerIndex"
+                    }
+                ]
+            },
+            {
+                "name": "Last ledger",
+                "description": "",
+                "selector": [
+                    {
+                        "type": "Null",
+                        "label": "padding",
+                        "byteLength": 28
+                    },
+                    {
+                        "type": "VarString",
+                        "label": "Key",
+                        "byteLength": 4,
+                        "pattern": "LAST",
+                        "patternEncoding": "ascii"
+                    }
+                ],
+                "data": [
+                    {
+                        "type": "UInt32",
+                        "label": "LedgerIndex"
+                    }
+                ]
+            }
+        ]
+    }
+}

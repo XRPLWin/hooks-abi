@@ -1,0 +1,159 @@
+{
+    "name": "Evernode Reputation Hook v10",
+    "description": null,
+    "icon": "https:\/\/xahau.xrplwin.com\/storage\/hooks\/efbb4898cd57cd274636431dbc7e90f04c49ea4721a754f7c40e471c381d91a4\/version-user1.webp",
+    "license": "Unlicensed",
+    "publishers": [
+        {
+            "type": "individual",
+            "name": "Evernode Labs Pty Ltd",
+            "url": null
+        }
+    ],
+    "readme": null,
+    "repo": "https:\/\/github.com\/EvernodeXRPL\/evernode-hook\/tree\/main\/evernode-reputation-hook",
+    "abi": {
+        "hookStates": [
+            {
+                "name": "Cleanup Moment",
+                "description": "",
+                "selector": [
+                    {
+                        "type": "Null",
+                        "label": "Null",
+                        "byteLength": 24
+                    },
+                    {
+                        "type": "VarString",
+                        "label": "Special",
+                        "byteLength": 8,
+                        "pattern": "FFFFFFFFFFFFFFFF",
+                        "patternEncoding": "hex"
+                    }
+                ],
+                "data": [
+                    {
+                        "type": "UInt64",
+                        "label": "Cleanup Moment"
+                    }
+                ]
+            },
+            {
+                "name": "Host Count in Moments",
+                "description": "",
+                "selector": [
+                    {
+                        "type": "Null",
+                        "label": "Null",
+                        "byteLength": 24
+                    },
+                    {
+                        "type": "UInt64",
+                        "label": "Moment"
+                    }
+                ],
+                "data": [
+                    {
+                        "type": "UInt64",
+                        "label": "Host Count"
+                    }
+                ]
+            },
+            {
+                "name": "Reputation Account to Ordered HostID",
+                "description": "",
+                "selector": [
+                    {
+                        "type": "Null",
+                        "label": "Null",
+                        "byteLength": 4
+                    },
+                    {
+                        "type": "UInt64",
+                        "label": "Moment"
+                    },
+                    {
+                        "type": "AccountID",
+                        "label": "Reputation Account"
+                    }
+                ],
+                "data": [
+                    {
+                        "type": "UInt64",
+                        "label": "Ordered HostID"
+                    }
+                ]
+            },
+            {
+                "name": "Ordered HostID to Reputation Account",
+                "description": "",
+                "selector": [
+                    {
+                        "type": "Null",
+                        "label": "Null",
+                        "byteLength": 16
+                    },
+                    {
+                        "type": "UInt64",
+                        "label": "Moment"
+                    },
+                    {
+                        "type": "UInt64",
+                        "label": "Ordered HostID"
+                    }
+                ],
+                "data": [
+                    {
+                        "type": "AccountID",
+                        "label": "Reputation Account"
+                    }
+                ]
+            },
+            {
+                "name": "Reputation",
+                "description": "",
+                "selector": [
+                    {
+                        "type": "Null",
+                        "label": "Null",
+                        "byteLength": 12
+                    },
+                    {
+                        "type": "AccountID",
+                        "label": "Reputation Account"
+                    }
+                ],
+                "data": [
+                    {
+                        "type": "UInt64",
+                        "label": "lastRegisteredMoment"
+                    },
+                    {
+                        "type": "UInt64",
+                        "label": "scoreNumerator"
+                    },
+                    {
+                        "type": "UInt64",
+                        "label": "scoreDenominator"
+                    },
+                    {
+                        "type": "UInt64",
+                        "label": "score"
+                    },
+                    {
+                        "type": "UInt64",
+                        "label": "lastResetMoment"
+                    },
+                    {
+                        "type": "UInt64",
+                        "label": "lastScoredMoment"
+                    },
+                    {
+                        "type": "UInt64",
+                        "label": "lastUniverseSize"
+                    }
+                ]
+            }
+        ]
+    }
+}

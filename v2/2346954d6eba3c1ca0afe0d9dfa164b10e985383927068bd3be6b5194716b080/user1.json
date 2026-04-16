@@ -1,0 +1,72 @@
+{
+    "name": "Simple Voting Contract",
+    "description": "This Voting Contract gives capabilities to host voting session.\n\nContract account can setup candidates,any account can vote (once) for candidate with Invoke transaction by sending desired Candidate ID.",
+    "icon": "https:\/\/xahau.xrplwin.com\/storage\/hooks\/2346954d6eba3c1ca0afe0d9dfa164b10e985383927068bd3be6b5194716b080\/version-user1.webp",
+    "license": "Unlicensed",
+    "publishers": [
+        {
+            "type": "individual",
+            "name": "XRPLWin",
+            "url": null
+        },
+        {
+            "type": "individual",
+            "name": "Tequ",
+            "url": null
+        }
+    ],
+    "readme": null,
+    "repo": "https:\/\/github.com\/XRPLWin\/hook-simplevoting",
+    "abi": {
+        "hookStates": [
+            {
+                "name": "Candidates",
+                "description": "",
+                "selector": [
+                    {
+                        "type": "Null",
+                        "label": "padding",
+                        "byteLength": 31
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "ID"
+                    }
+                ],
+                "data": [
+                    {
+                        "type": "VarString",
+                        "label": "Candidate name",
+                        "byteLength": 32
+                    },
+                    {
+                        "type": "UInt16",
+                        "label": "Number of votes"
+                    }
+                ]
+            },
+            {
+                "name": "Votes",
+                "description": "",
+                "selector": [
+                    {
+                        "type": "Null",
+                        "label": "padding",
+                        "byteLength": 12
+                    },
+                    {
+                        "type": "AccountID",
+                        "label": "Voter"
+                    }
+                ],
+                "data": [
+                    {
+                        "type": "VarString",
+                        "label": "Candidate name",
+                        "byteLength": 32
+                    }
+                ]
+            }
+        ]
+    }
+}

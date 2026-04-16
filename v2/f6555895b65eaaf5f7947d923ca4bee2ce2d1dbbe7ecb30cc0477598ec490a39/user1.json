@@ -1,0 +1,53 @@
+{
+    "name": "Evernode Price Oracle v1",
+    "description": null,
+    "icon": "https:\/\/xahau.xrplwin.com\/storage\/hooks\/f6555895b65eaaf5f7947d923ca4bee2ce2d1dbbe7ecb30cc0477598ec490a39\/version-user1.",
+    "license": "Unlicensed",
+    "publishers": [
+        {
+            "type": "individual",
+            "name": "Transia-RnD",
+            "url": null
+        }
+    ],
+    "readme": null,
+    "repo": "https:\/\/github.com\/Transia-RnD\/evernode-oracle",
+    "abi": {
+        "hookStates": [
+            {
+                "name": "EVR\/XAH Oracle",
+                "description": "",
+                "selector": [
+                    {
+                        "type": "Hash256",
+                        "label": "EVR\/XAH",
+                        "pattern": "D776255B7AE7126E091A0A3CD895852855FBECD597D02C5FF0335BD7C4BF018C",
+                        "patternEncoding": "ascii"
+                    }
+                ],
+                "data": [
+                    {
+                        "type": "XFL",
+                        "label": "price"
+                    }
+                ]
+            },
+            {
+                "name": "Unknown Oracle",
+                "description": "",
+                "selector": [
+                    {
+                        "type": "Hash256",
+                        "label": "HASH(issuer,currency)"
+                    }
+                ],
+                "data": [
+                    {
+                        "type": "XFL",
+                        "label": "price"
+                    }
+                ]
+            }
+        ]
+    }
+}

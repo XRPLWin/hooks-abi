@@ -1,0 +1,406 @@
+{
+    "name": "Xahau Governance Game Hook v3",
+    "description": "The Governance Game is an innovative governance mechanism within the Xahau ecosystem to ensure a community-centric approach towards decision-making.\n\nFixed Governance Game Hook, vote purge bug is fixed with this version.\n\nSee issue: https:\/\/github.com\/Xahau\/xahaud\/issues\/211",
+    "icon": "https:\/\/xahau.xrplwin.com\/storage\/hooks\/bed26b4b3e7f2b20811b8417417f0b78216e41cf622acacbb9dfeb6e357a4623\/version-user1.webp",
+    "license": "Unlicensed",
+    "publishers": [],
+    "readme": null,
+    "repo": "https:\/\/github.com\/Xahau\/xahaud\/blob\/dev\/hook\/genesis\/govern.c",
+    "abi": {
+        "hookStates": [
+            {
+                "name": "Current member count",
+                "description": "",
+                "selector": [
+                    {
+                        "type": "Null",
+                        "label": "padding",
+                        "byteLength": 30,
+                        "exclude": true
+                    },
+                    {
+                        "type": "VarString",
+                        "label": "type",
+                        "byteLength": 2,
+                        "pattern": "MC",
+                        "patternEncoding": "ascii"
+                    }
+                ],
+                "data": [
+                    {
+                        "type": "UInt8",
+                        "label": "Count",
+                        "byteLength": 1
+                    }
+                ]
+            },
+            {
+                "name": "Current reward rate",
+                "description": "",
+                "selector": [
+                    {
+                        "type": "Null",
+                        "label": "padding",
+                        "byteLength": 30,
+                        "exclude": true
+                    },
+                    {
+                        "type": "VarString",
+                        "label": "type",
+                        "byteLength": 2,
+                        "pattern": "RR",
+                        "patternEncoding": "ascii"
+                    }
+                ],
+                "data": [
+                    {
+                        "type": "XFL",
+                        "label": "Value"
+                    }
+                ]
+            },
+            {
+                "name": "Current reward delay",
+                "description": "",
+                "selector": [
+                    {
+                        "type": "Null",
+                        "label": "padding",
+                        "byteLength": 30,
+                        "exclude": true
+                    },
+                    {
+                        "type": "VarString",
+                        "label": "type",
+                        "byteLength": 2,
+                        "pattern": "RD",
+                        "patternEncoding": "ascii"
+                    }
+                ],
+                "data": [
+                    {
+                        "type": "XFL",
+                        "label": "Value"
+                    }
+                ]
+            },
+            {
+                "name": "Seat Place",
+                "description": "",
+                "selector": [
+                    {
+                        "type": "Null",
+                        "label": "padding",
+                        "byteLength": 31,
+                        "exclude": true
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "SeatID"
+                    }
+                ],
+                "data": [
+                    {
+                        "type": "AccountID",
+                        "label": "Account"
+                    }
+                ]
+            },
+            {
+                "name": "Account Place",
+                "description": "",
+                "selector": [
+                    {
+                        "type": "Null",
+                        "label": "padding",
+                        "byteLength": 12,
+                        "exclude": true
+                    },
+                    {
+                        "type": "AccountID",
+                        "label": "Account"
+                    }
+                ],
+                "data": [
+                    {
+                        "type": "UInt8",
+                        "label": "Seat Vote Count"
+                    }
+                ]
+            },
+            {
+                "name": "Vote Hook",
+                "description": "",
+                "selector": [
+                    {
+                        "type": "VarString",
+                        "label": "Type",
+                        "byteLength": 2,
+                        "pattern": "VH",
+                        "patternEncoding": "ascii"
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Slot"
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Layer"
+                    },
+                    {
+                        "type": "Null",
+                        "label": "padding",
+                        "byteLength": 8,
+                        "exclude": true
+                    },
+                    {
+                        "type": "AccountID",
+                        "label": "Account"
+                    }
+                ],
+                "data": [
+                    {
+                        "type": "Hash256",
+                        "label": "HookHash"
+                    }
+                ]
+            },
+            {
+                "name": "Vote Reward Rate",
+                "description": "",
+                "selector": [
+                    {
+                        "type": "VarString",
+                        "label": "type",
+                        "byteLength": 3,
+                        "pattern": "VRR",
+                        "patternEncoding": "ascii"
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Layer"
+                    },
+                    {
+                        "type": "Null",
+                        "label": "padding",
+                        "byteLength": 8,
+                        "exclude": true
+                    },
+                    {
+                        "type": "AccountID",
+                        "label": "Account"
+                    }
+                ],
+                "data": [
+                    {
+                        "type": "XFL",
+                        "label": "Value"
+                    }
+                ]
+            },
+            {
+                "name": "Vote Reward Delay",
+                "description": "",
+                "selector": [
+                    {
+                        "type": "VarString",
+                        "label": "type",
+                        "byteLength": 3,
+                        "pattern": "VRD",
+                        "patternEncoding": "ascii"
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Layer"
+                    },
+                    {
+                        "type": "Null",
+                        "label": "padding",
+                        "byteLength": 8,
+                        "exclude": true
+                    },
+                    {
+                        "type": "AccountID",
+                        "label": "Account"
+                    }
+                ],
+                "data": [
+                    {
+                        "type": "XFL",
+                        "label": "Value"
+                    }
+                ]
+            },
+            {
+                "name": "Vote Seat",
+                "description": "",
+                "selector": [
+                    {
+                        "type": "VarString",
+                        "label": "type",
+                        "byteLength": 2,
+                        "pattern": "VS",
+                        "patternEncoding": "ascii"
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "SeatID"
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Layer"
+                    },
+                    {
+                        "type": "Null",
+                        "label": "padding",
+                        "byteLength": 8,
+                        "exclude": true
+                    },
+                    {
+                        "type": "AccountID",
+                        "label": "Account"
+                    }
+                ],
+                "data": [
+                    {
+                        "type": "AccountID",
+                        "label": "Account"
+                    }
+                ]
+            },
+            {
+                "name": "Count Vote Hook",
+                "description": "",
+                "selector": [
+                    {
+                        "type": "VarString",
+                        "label": "type",
+                        "byteLength": 2,
+                        "pattern": "CH",
+                        "patternEncoding": "ascii"
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Slot"
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Layer"
+                    },
+                    {
+                        "type": "VarString",
+                        "label": "HookHash",
+                        "byteLength": 28
+                    }
+                ],
+                "data": [
+                    {
+                        "type": "UInt8",
+                        "label": "Count"
+                    }
+                ]
+            },
+            {
+                "name": "Count Vote Reward Rate",
+                "description": "",
+                "selector": [
+                    {
+                        "type": "VarString",
+                        "label": "type",
+                        "byteLength": 3,
+                        "pattern": "CRR",
+                        "patternEncoding": "ascii"
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Layer"
+                    },
+                    {
+                        "type": "VarString",
+                        "label": "padding",
+                        "byteLength": 20
+                    },
+                    {
+                        "type": "XFL",
+                        "label": "Value"
+                    }
+                ],
+                "data": [
+                    {
+                        "type": "UInt8",
+                        "label": "Count"
+                    }
+                ]
+            },
+            {
+                "name": "Count Vote Reward Delay",
+                "description": "",
+                "selector": [
+                    {
+                        "type": "VarString",
+                        "label": "type",
+                        "byteLength": 3,
+                        "pattern": "CRD",
+                        "patternEncoding": "ascii"
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Layer"
+                    },
+                    {
+                        "type": "VarString",
+                        "label": "padding",
+                        "byteLength": 20
+                    },
+                    {
+                        "type": "XFL",
+                        "label": "Value"
+                    }
+                ],
+                "data": [
+                    {
+                        "type": "UInt8",
+                        "label": "Count"
+                    }
+                ]
+            },
+            {
+                "name": "Count Vote Seat",
+                "description": "",
+                "selector": [
+                    {
+                        "type": "VarString",
+                        "label": "type",
+                        "byteLength": 2,
+                        "pattern": "CS",
+                        "patternEncoding": "ascii"
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "SeatID"
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Layer"
+                    },
+                    {
+                        "type": "Null",
+                        "label": "padding",
+                        "byteLength": 8,
+                        "exclude": true
+                    },
+                    {
+                        "type": "AccountID",
+                        "label": "Account"
+                    }
+                ],
+                "data": [
+                    {
+                        "type": "UInt8",
+                        "label": "Count"
+                    }
+                ]
+            }
+        ]
+    }
+}

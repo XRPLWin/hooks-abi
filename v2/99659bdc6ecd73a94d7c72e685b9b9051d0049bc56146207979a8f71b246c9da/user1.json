@@ -1,0 +1,43 @@
+{
+    "name": "Xahau Birthday Card Hook",
+    "description": "Let's make Xahau's 2nd birthday unforgettable! Add your message to the on-chain birthday card in just a few fun steps.",
+    "icon": "https:\/\/xahau.xrplwin.com\/storage\/hooks\/99659bdc6ecd73a94d7c72e685b9b9051d0049bc56146207979a8f71b246c9da\/version-user1.webp",
+    "license": "Unlicensed",
+    "publishers": [
+        {
+            "type": "individual",
+            "name": "HandyAndy",
+            "url": null
+        }
+    ],
+    "readme": null,
+    "repo": "https:\/\/github.com\/Handy4ndy\/HandyHooks\/tree\/main\/XahauBirthdayCard",
+    "abi": {
+        "hookStates": [
+            {
+                "name": "Birthday Messages",
+                "description": "",
+                "selector": [
+                    {
+                        "type": "VarString",
+                        "label": "Key",
+                        "byteLength": 12,
+                        "pattern": "BIRTHDAY_MSG",
+                        "patternEncoding": "ascii"
+                    },
+                    {
+                        "type": "Null",
+                        "label": "Null",
+                        "byteLength": 20
+                    }
+                ],
+                "data": [
+                    {
+                        "type": "VarString",
+                        "label": "Message"
+                    }
+                ]
+            }
+        ]
+    }
+}

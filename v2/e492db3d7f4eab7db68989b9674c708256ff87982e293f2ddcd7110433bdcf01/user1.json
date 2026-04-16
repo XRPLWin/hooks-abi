@@ -1,0 +1,374 @@
+{
+    "name": "Supports tipping on social media platforms (especially twitter\/X, netid=1)",
+    "description": null,
+    "icon": null,
+    "license": "Unlicensed",
+    "publishers": [],
+    "readme": null,
+    "repo": null,
+    "abi": {
+        "hookStates": [
+            {
+                "name": "[P] Governance game Members",
+                "description": "",
+                "selector": [
+                    {
+                        "type": "Null",
+                        "label": "Null",
+                        "byteLength": 30
+                    },
+                    {
+                        "type": "VarString",
+                        "label": "Identifier",
+                        "byteLength": 1,
+                        "pattern": "P",
+                        "patternEncoding": "ascii"
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Seat ID"
+                    }
+                ],
+                "data": [
+                    {
+                        "type": "AccountID",
+                        "label": "Member Account"
+                    }
+                ]
+            },
+            {
+                "name": "Governance game Members (reverse)",
+                "description": "",
+                "selector": [
+                    {
+                        "type": "Null",
+                        "label": "Null",
+                        "byteLength": 12
+                    },
+                    {
+                        "type": "AccountID",
+                        "label": "Member Account"
+                    }
+                ],
+                "data": [
+                    {
+                        "type": "UInt8",
+                        "label": "Seat ID"
+                    }
+                ]
+            },
+            {
+                "name": "[SM] Member Count",
+                "description": "",
+                "selector": [
+                    {
+                        "type": "VarString",
+                        "label": "Identifier",
+                        "byteLength": 2,
+                        "pattern": "SM",
+                        "patternEncoding": "ascii"
+                    },
+                    {
+                        "type": "Null",
+                        "label": "Null",
+                        "byteLength": 30
+                    }
+                ],
+                "data": [
+                    {
+                        "type": "UInt64",
+                        "label": "Seats 0-63 count"
+                    },
+                    {
+                        "type": "UInt64",
+                        "label": "Seats 64-127 count"
+                    },
+                    {
+                        "type": "UInt64",
+                        "label": "Seats 128-191 count"
+                    },
+                    {
+                        "type": "UInt64",
+                        "label": "Seats 192-255 count"
+                    }
+                ]
+            },
+            {
+                "name": "[SL] Cleanup Low Watermark",
+                "description": "",
+                "selector": [
+                    {
+                        "type": "VarString",
+                        "label": "Identifier",
+                        "byteLength": 2,
+                        "pattern": "SL",
+                        "patternEncoding": "ascii"
+                    },
+                    {
+                        "type": "Null",
+                        "label": "Null",
+                        "byteLength": 30
+                    }
+                ],
+                "data": [
+                    {
+                        "type": "UInt64",
+                        "label": "Cleanup Lower Bound"
+                    }
+                ]
+            },
+            {
+                "name": "[SH] Cleanup High Watermark",
+                "description": "",
+                "selector": [
+                    {
+                        "type": "VarString",
+                        "label": "Identifier",
+                        "byteLength": 2,
+                        "pattern": "SH",
+                        "patternEncoding": "ascii"
+                    },
+                    {
+                        "type": "Null",
+                        "label": "Null",
+                        "byteLength": 30
+                    }
+                ],
+                "data": [
+                    {
+                        "type": "UInt64",
+                        "label": "Cleanup Upper Bound"
+                    }
+                ]
+            },
+            {
+                "name": "[C] Cleanup Entry",
+                "description": "",
+                "selector": [
+                    {
+                        "type": "Null",
+                        "label": "Null",
+                        "byteLength": 23
+                    },
+                    {
+                        "type": "VarString",
+                        "label": "Identifier",
+                        "byteLength": 1,
+                        "pattern": "C",
+                        "patternEncoding": "ascii"
+                    },
+                    {
+                        "type": "UInt64",
+                        "label": "Cleanup ID"
+                    }
+                ],
+                "data": [
+                    {
+                        "type": "VarString",
+                        "label": "Key to Delete"
+                    }
+                ]
+            },
+            {
+                "name": "[O] Post Info",
+                "description": "",
+                "selector": [
+                    {
+                        "type": "Null",
+                        "label": "Null",
+                        "byteLength": 22
+                    },
+                    {
+                        "type": "VarString",
+                        "label": "Identifier",
+                        "byteLength": 1,
+                        "pattern": "O",
+                        "patternEncoding": "ascii"
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Social Network ID"
+                    },
+                    {
+                        "type": "UInt64",
+                        "label": "Post ID"
+                    }
+                ],
+                "data": [
+                    {
+                        "type": "UInt32",
+                        "label": "First Ledger Seq"
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Actioned"
+                    },
+                    {
+                        "type": "VarString",
+                        "label": "Voter Bitfield",
+                        "byteLength": 32
+                    }
+                ]
+            },
+            {
+                "name": "[O] Opinion Vote Count",
+                "description": "",
+                "selector": [
+                    {
+                        "type": "VarString",
+                        "label": "Identifier",
+                        "byteLength": 1,
+                        "pattern": "O",
+                        "patternEncoding": "ascii"
+                    },
+                    {
+                        "type": "VarString",
+                        "label": "Opinion Hash",
+                        "byteLength": 31
+                    }
+                ],
+                "data": [
+                    {
+                        "type": "UInt32",
+                        "label": "First Ledger Seq"
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Vote Count"
+                    }
+                ]
+            },
+            {
+                "name": "[B] Balance",
+                "description": "",
+                "selector": [
+                    {
+                        "type": "VarString",
+                        "label": "Identifier",
+                        "byteLength": 1,
+                        "pattern": "B",
+                        "patternEncoding": "ascii"
+                    },
+                    {
+                        "type": "VarString",
+                        "label": "Balance Hash",
+                        "byteLength": 31
+                    }
+                ],
+                "data": [
+                    {
+                        "type": "XFL",
+                        "label": "Balance"
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Slot Index"
+                    }
+                ]
+            },
+            {
+                "name": "[U] User Currency Catalogue",
+                "description": "",
+                "selector": [
+                    {
+                        "type": "Null",
+                        "label": "Null",
+                        "byteLength": 11
+                    },
+                    {
+                        "type": "VarString",
+                        "label": "Identifier",
+                        "byteLength": 1,
+                        "pattern": "U",
+                        "patternEncoding": "ascii"
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Social Network ID"
+                    },
+                    {
+                        "type": "VarString",
+                        "label": "User ID or Account",
+                        "byteLength": 19
+                    }
+                ],
+                "data": [
+                    {
+                        "type": "Hash256",
+                        "label": "Currency Bitfield"
+                    }
+                ]
+            },
+            {
+                "name": "[U] User Currency Slot",
+                "description": "",
+                "selector": [
+                    {
+                        "type": "Null",
+                        "label": "Null",
+                        "byteLength": 10
+                    },
+                    {
+                        "type": "VarString",
+                        "label": "Identifier",
+                        "byteLength": 1,
+                        "pattern": "U",
+                        "patternEncoding": "ascii"
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Social Network ID"
+                    },
+                    {
+                        "type": "VarString",
+                        "label": "User ID or Account",
+                        "byteLength": 19
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Slot Index"
+                    }
+                ],
+                "data": [
+                    {
+                        "type": "VarString",
+                        "label": "Currency Code",
+                        "byteLength": 20
+                    },
+                    {
+                        "type": "AccountID",
+                        "label": "Issuer"
+                    }
+                ]
+            },
+            {
+                "name": "[H] Pending Hook Upgrade",
+                "description": "",
+                "selector": [
+                    {
+                        "type": "Null",
+                        "label": "Null",
+                        "byteLength": 30
+                    },
+                    {
+                        "type": "VarString",
+                        "label": "Identifier",
+                        "byteLength": 1,
+                        "pattern": "H",
+                        "patternEncoding": "ascii"
+                    },
+                    {
+                        "type": "UInt8",
+                        "label": "Hook Position"
+                    }
+                ],
+                "data": [
+                    {
+                        "type": "Hash256",
+                        "label": "Hook Hash"
+                    }
+                ]
+            }
+        ]
+    }
+}
